@@ -1,0 +1,17 @@
+<!-- language file start -->
+crs_select_button_choose#:#Workspace auswählen
+usr_table_title#:#Benutzer auswählen
+usr_table_header_name#:#Name
+usr_table_header_email#:#E-Mail
+usr_table_header_role#:#Rolle
+usr_table_button_add#:#Ausgewählte Benutzer zu Kurs hinzufügen
+usr_table_button_select_mem#:#Alle Reader auswählen
+usr_table_button_select_tut#:#Alle Contributors auswählen
+usr_table_button_select_adm#:#Alle Manager auswählen
+main_tab_back#:#Zurück
+msg_select_course#:#Wählen Sie den gewünschten Workspace aus, von welchem Sie Benutzer importieren möchten.
+msg_alert_crs_only#:#Es können nur Workspaces ausgewählt werden.
+msg_alert_no_access#:#Sie besitzen zu wenig Rechte um Benutzer dieses Workspaces zu verwalten.
+msg_alert_no_users#:#Sie haben keine Benutzer ausgewählt.
+msg_success#:#Die ausgewählten Benutzer wurden zum Workspace hinzugefügt.
+msg_select_users#:#Bitte wählen Sie die gewünschten Benutzer aus. Die Rolle kann geändert werden. Eingeschriebene Benutzer werden nicht benachrichtigt.
