@@ -1,6 +1,11 @@
 <tr class="{CSS_ROW}">
-	<td class="std small {CLASS}"><input class="role_{TYPE}" name="usr_ids[]" value="{USR_ID}" type="checkbox"></td>
-	<td class="std small {CLASS}">{NAME}</td>
-	<td class="std small {CLASS}">{EMAIL}</td>
-	<td class="std small {CLASS}">{ROLE}</td>
+	<!-- BEGIN td -->
+	<td class="std small">{VALUE}</td>
+	<!-- END td -->
+	<!-- BEGIN radio -->
+	<td class="std small"><input type="radio" name="id" value="{ID}"></td>
+	<!-- END radio -->
+	<!-- BEGIN checkbox -->
+	<td class="std small"><input type="checkbox" name="id[]" value="{ID}"></td>
+	<!-- END checkbox -->
 </tr>

@@ -1,17 +1,21 @@
 <!-- language file start -->
-crs_select_button_choose#:#Choose Workspace
-usr_table_title#:#Choose Users
-usr_table_header_name#:#Name
-usr_table_header_email#:#E-Mail
-usr_table_header_role#:#Role
-usr_table_button_add#:#Add selected Users to Course
-usr_table_button_select_mem#:#Select all Readers
-usr_table_button_select_tut#:#Select all Contributors
-usr_table_button_select_adm#:#Select all Manager
-main_tab_back#:#Back
-msg_select_course#:#Please choose a Workspace to start import users.
-msg_alert_crs_only#:#Only Workspaces possible.
-msg_alert_no_access#:#You don't have the permession to choose users from this workspace.
-msg_alert_no_users#:#No users chosen.
-msg_success#:#The selected users have been added to the workspace.
-msg_select_users#:#Please select users to add to the workspace. Users will not be notified.
+usr_firstname#:#Firstname
+usr_lastname#:#Lastname
+usr_email#:#E-Mail
+usr_login#:#Account
+common_actions#:#Actions
+header_title#:#Multi-Assign
+header_description#:#Assign a user to multiple Workspaces
+button_select_user#:#Select User
+usr_selected_data#:#Selected User
+main_role_1#:#Manager
+main_role_2#:#Reader
+main_role_3#:#Contributor
+crs_title#:#WS-Title
+crs_path#:#Path
+crs_role#:#Role
+crs_selection#:#Selection
+crs_do_assignments#:#Assign User
+crs_cancel#:#Cancel
+msg_success_user_assigned#:#User assigned
+msg_failure_no_user_selected#:#No User selected

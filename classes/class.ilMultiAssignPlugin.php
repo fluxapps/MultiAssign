@@ -9,7 +9,7 @@ require_once('./Services/UIComponent/classes/class.ilUserInterfaceHookPlugin.php
  * @version $Id$
  *
  */
-class ilCopyUsersPlugin extends ilUserInterfaceHookPlugin {
+class ilMultiAssignPlugin extends ilUserInterfaceHookPlugin {
 
 	const PLUGIN_NAME = 'MultiAssign';
 	/**
