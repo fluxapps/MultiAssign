@@ -27,7 +27,6 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 		$this->parent_gui = $parent_gui;
 		$this->ctrl = $ilCtrl;
 		$this->pl = ilMultiAssignPlugin::getInstance();
-		$this->pl->updateLanguageFiles();
 		$this->setFormAction($this->ctrl->getFormAction($this->parent_gui));
 		$this->initForm();
 	}
