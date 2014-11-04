@@ -5,7 +5,7 @@ usr_email#:#E-Mail
 usr_login#:#Account
 common_actions#:#Aktionen
 header_title#:#Multi-Zuweisung
-header_description#:#Weisen Sie einen benutzer mehreren Workspaces zu
+header_description#:#Weisen Sie einen Benutzer mehreren Workspaces zu
 button_select_user#:#Benutzer auswählen
 usr_selected_data#:#Ausgewählter Benutzer
 main_role_1#:#Manager
@@ -19,3 +19,8 @@ crs_do_assignments#:#Benutzer einschreiben
 crs_cancel#:#Abbrechen
 msg_success_user_assigned#:#Benutzer eingeschrieben
 msg_failure_no_user_selected#:#Kein Benutzer ausgewählt
+msg_failure_more_characters_needed#:#Filter müssen mind. 3 Zeichen enthalten
+admin_form_title#:#Einstellungen
+admin_form_button_save#:#Speichern
+admin_form_button_cancel#:#Abbrechen
+admin_roles#:#Verfügbar für Rollen

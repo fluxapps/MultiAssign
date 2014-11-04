@@ -98,6 +98,11 @@ class multaUserTableGUI extends ilTable2GUI {
 		$fitered = false;
 		foreach ($this->filter as $field => $value) {
 			if ($value) {
+				$value = str_replace('%', '', $value);
+				if (strlen($value) < 3) {
+					ilUtil::sendFailure($this->pl->txt('msg_failure_more_characters_needed'));
+					continue;
+				}
 				$fitered = true;
 				$multaUser->where(array( $field => '%' . $value . '%' ), 'LIKE');
 			}
@@ -109,11 +114,11 @@ class multaUserTableGUI extends ilTable2GUI {
 
 		$this->setMaxCount($multaUser->count());
 		if (!$multaUser->hasSets()) {
-//			ilUtil::sendInfo('Keine Ergebnisse für diesen Filter');
+			//			ilUtil::sendInfo('Keine Ergebnisse für diesen Filter');
 		}
 		$multaUser->limit($this->getOffset(), $this->getOffset() + $this->getLimit());
 		$multaUser->orderBy('email');
-//		$multaUser->debug();
+		//		$multaUser->debug();
 		$this->setData($multaUser->getArray());
 	}
 

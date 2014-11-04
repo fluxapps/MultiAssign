@@ -19,3 +19,8 @@ crs_do_assignments#:#Assign User
 crs_cancel#:#Cancel
 msg_success_user_assigned#:#User assigned
 msg_failure_no_user_selected#:#No User selected
+msg_failure_more_characters_needed#:#Filters need 3 characters or more
+admin_form_title#:#Settings
+admin_form_button_save#:#Save
+admin_form_button_cancel#:#Cancel
+admin_roles#:#Available for roles

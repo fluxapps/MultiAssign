@@ -28,7 +28,7 @@ class multaMainGUI {
 		$this->lng = $lng;
 		$this->tabs = $ilTabs;
 		$this->pl = ilMultiAssignPlugin::getInstance();
-//		$this->pl->updateLanguageFiles();
+		//		$this->pl->updateLanguageFiles();
 	}
 
 

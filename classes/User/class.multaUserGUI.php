@@ -1,7 +1,7 @@
 <?php
 require_once('class.multaUser.php');
 require_once('class.multaUserTableGUI.php');
-
+require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/class.multaAccess.php');
 /**
  * Class multaUserGUI
  *
@@ -37,6 +37,9 @@ class multaUserGUI {
 
 
 	public function executeCommand() {
+		if(!multaAccess::hasAccess()) {
+			return false;
+		}
 		$cmd = $this->ilCtrl->getCmd(self::CMD_INDEX);
 		switch ($cmd) {
 			case self::CMD_INDEX:
