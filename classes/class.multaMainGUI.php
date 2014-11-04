@@ -28,7 +28,7 @@ class multaMainGUI {
 		$this->lng = $lng;
 		$this->tabs = $ilTabs;
 		$this->pl = ilMultiAssignPlugin::getInstance();
-		$this->pl->updateLanguageFiles();
+		//		$this->pl->updateLanguageFiles();
 	}
 
 
@@ -43,6 +43,7 @@ class multaMainGUI {
 		$this->initHeader();
 		$next_class = $this->ilCtrl->getNextClass();
 		switch ($next_class) {
+			case '':
 			case 'multausergui':
 				$gui = new multaUserGUI();
 				$this->ilCtrl->forwardCommand($gui);
