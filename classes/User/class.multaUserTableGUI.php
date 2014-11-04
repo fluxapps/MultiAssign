@@ -53,6 +53,7 @@ class multaUserTableGUI extends ilTable2GUI {
 		$this->setDefaultOrderField('title');
 		$this->setExternalSorting(true);
 		$this->setExternalSegmentation(true);
+		$this->setDisableFilterHiding(true);
 		$this->parseData();
 		$this->addCommandButton('selectUser', $this->pl->txt('button_select_user'));
 	}
@@ -94,22 +95,25 @@ class multaUserTableGUI extends ilTable2GUI {
 		$this->determineLimit();
 		$multaUser = multaUser::getCollection();
 		$multaUser->orderBy($this->getOrderField(), $this->getOrderDirection());
-		if (count($this->filter) > 0) {
-			foreach ($this->filter as $field => $value) {
-				if ($value) {
-					$multaUser->where(array( $field => '%' . $value . '%' ), 'LIKE');
-				}
+		$fitered = false;
+		foreach ($this->filter as $field => $value) {
+			if ($value) {
+				$fitered = true;
+				$multaUser->where(array( $field => '%' . $value . '%' ), 'LIKE');
 			}
-		} else {
+		}
+
+		if (!$fitered) {
 			$multaUser->where(array( 'usr_id' => 4 ));
 		}
 
 		$this->setMaxCount($multaUser->count());
 		if (!$multaUser->hasSets()) {
-			ilUtil::sendInfo('Keine Ergebnisse für diesen Filter');
+//			ilUtil::sendInfo('Keine Ergebnisse für diesen Filter');
 		}
 		$multaUser->limit($this->getOffset(), $this->getOffset() + $this->getLimit());
 		$multaUser->orderBy('email');
+//		$multaUser->debug();
 		$this->setData($multaUser->getArray());
 	}
 
