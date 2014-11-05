@@ -19,6 +19,7 @@ crs_do_assignments#:#Benutzer einschreiben
 crs_cancel#:#Abbrechen
 msg_success_user_assigned#:#Benutzer eingeschrieben
 msg_failure_no_user_selected#:#Kein Benutzer ausgewählt
+msg_failure_own_usr_id#:#Das eigene Benutzerkonto kann nicht ausgewählt werden
 msg_failure_more_characters_needed#:#Filter müssen mind. 3 Zeichen enthalten
 admin_form_title#:#Einstellungen
 admin_form_button_save#:#Speichern
