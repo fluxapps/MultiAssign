@@ -1,7 +1,6 @@
 MultiAssign
 =========
 ILIAS UserInterfaceHook-Plugin with the following featues:
-
 - Add a User so one or more courses
 
 ###Installation
