@@ -60,6 +60,9 @@ class multaCourseTableGUI extends ilTable2GUI {
 		$this->parseData();
 		$this->addCommandButton(multaCourseGUI::CMD_CANCEL, $this->pl->txt('crs_cancel'));
 		$this->addCommandButton(multaCourseGUI::CMD_DO_ASSIGNMENTS, $this->pl->txt('crs_do_assignments'));
+		//		$this->addMultiItemSelectionButton('id', null, 'select_all', $this->pl->txt('crs_select_all'));
+		//		$this->setSe
+		$this->setSelectAllCheckbox('id');
 	}
 
 
@@ -69,7 +72,7 @@ class multaCourseTableGUI extends ilTable2GUI {
 	public function fillRow($a_set) {
 		foreach ($this->getSelectableColumns() as $k => $v) {
 			if ($k == 'selection') {
-				$this->tpl->setCurrentBlock('checkbox');
+				$this->tpl->setCurrentBlock('checkbox_front');
 				$this->tpl->setVariable('ID', $a_set['ref_id']);
 				$this->tpl->parseCurrentBlock();
 				continue;
@@ -114,10 +117,10 @@ class multaCourseTableGUI extends ilTable2GUI {
 	 * @return array
 	 */
 	public function getSelectableColumns() {
+		$cols['selection'] = array( 'txt' => $this->pl->txt('crs_selection'), 'default' => true, 'width' => '60px', 'sort_field' => NULL );
+		$cols['role'] = array( 'txt' => $this->pl->txt('crs_role'), 'default' => true, 'width' => '100px', 'sort_field' => NULL );
 		$cols['title'] = array( 'txt' => $this->pl->txt('crs_title'), 'default' => true, 'width' => '30%', 'sort_field' => 'title' );
 		$cols['path'] = array( 'txt' => $this->pl->txt('crs_path'), 'default' => true, 'width' => 'auto', 'sort_field' => NULL );
-		$cols['role'] = array( 'txt' => $this->pl->txt('crs_role'), 'default' => true, 'width' => '100px', 'sort_field' => NULL );
-		$cols['selection'] = array( 'txt' => $this->pl->txt('crs_selection'), 'default' => true, 'width' => '80px', 'sort_field' => NULL );
 
 		return $cols;
 	}

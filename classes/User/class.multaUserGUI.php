@@ -54,13 +54,13 @@ class multaUserGUI {
 
 
 	protected function index() {
-		$multaUserTableGUI = new multaUserTableGUI($this, 'index');
+		$multaUserTableGUI = new multaUserTableGUI($this, self::CMD_INDEX);
 		$this->tpl->setContent($multaUserTableGUI->getHTML());
 	}
 
 
 	protected function applyFilter() {
-		$multaUserTableGUI = new multaUserTableGUI($this, 'index');
+		$multaUserTableGUI = new multaUserTableGUI($this, self::CMD_INDEX);
 		$multaUserTableGUI->resetOffset();
 		$multaUserTableGUI->writeFilterToSession();
 		$this->ilCtrl->redirect($this, self::CMD_INDEX);
@@ -68,7 +68,7 @@ class multaUserGUI {
 
 
 	protected function resetFilter() {
-		$multaUserTableGUI = new multaUserTableGUI($this, 'index');
+		$multaUserTableGUI = new multaUserTableGUI($this, self::CMD_INDEX);
 		$multaUserTableGUI->resetFilter();
 		$multaUserTableGUI->resetOffset();
 		$this->ilCtrl->redirect($this, self::CMD_INDEX);
