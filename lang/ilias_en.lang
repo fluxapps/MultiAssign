@@ -25,3 +25,7 @@ admin_form_title#:#Settings
 admin_form_button_save#:#Save
 admin_form_button_cancel#:#Cancel
 admin_roles#:#Available for roles
+admin_email_text_de#:#German E-Mailtext
+admin_email_text_en#:#English E-Mailtext
+admin_placeholders#:#Placeholders
+admin_send_mails#:#Send Summary-Mail

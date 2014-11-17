@@ -11,6 +11,10 @@ class multaConfig extends ActiveRecord {
 
 	const TABLE_NAME = 'multa_config';
 	const F_ROLES_ADMIN = 'roles';
+	const F_EMAIL_TEXT_PREFIX = 'email_text_';
+	const F_EMAIL_TEXT_DE = 'email_text_de';
+	const F_EMAIL_TEXT_EN = 'email_text_en';
+	const F_SEND_MAILS = 'send_mails';
 
 
 	/**
@@ -39,7 +43,10 @@ class multaConfig extends ActiveRecord {
 		 */
 		$obj = self::findOrGetInstance($id);
 
-		return json_decode($obj->getValue());
+		$value = json_decode($obj->getValue());
+		$return = ($value ? $value : $obj->getValue());
+
+		return $return;
 	}
 
 
@@ -52,7 +59,11 @@ class multaConfig extends ActiveRecord {
 		 * @var $obj multaConfig
 		 */
 		$obj = self::find($id);
-		$encoded_value = json_encode($value);
+		if (is_array($value)) {
+			$encoded_value = json_encode($value);
+		} else {
+			$encoded_value = $value;
+		}
 		if ($obj instanceof multaConfig) {
 			$obj->setValue($encoded_value);
 			$obj->update();
@@ -80,7 +91,7 @@ class multaConfig extends ActiveRecord {
 	 *
 	 * @con_has_field true
 	 * @con_fieldtype text
-	 * @con_length    256
+	 * @con_length    4000
 	 */
 	protected $value = '';
 
