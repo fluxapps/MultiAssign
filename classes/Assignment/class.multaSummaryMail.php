@@ -108,7 +108,7 @@ class multaSummaryMail {
 	 *
 	 * @return string
 	 */
-	public function renderPlaceholder($key) {
+	protected function renderPlaceholder($key) {
 		switch ($key) {
 			case self::P_LIST_ALL:
 				$string_list = $this->getStringListForRole(NULL);
