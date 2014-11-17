@@ -1,7 +1,8 @@
 MultiAssign
 =========
-ILIAS UserInterfaceHook-Plugin with the following featues:
-- Add a User so one or more courses
+ILIAS UserInterfaceHook-Plugin with the following featues:  
+- Add a User so one or more courses  
+- Send a Summary-Email
 
 ###Installation
 Start at your ILIAS root directory  
@@ -20,4 +21,3 @@ Switzerland
 
 info@studer-raimann.ch
 www.studer-raimann.ch
-
