@@ -4,6 +4,8 @@ require_once('class.multaCourseTableGUI.php');
 require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/User/class.multaUser.php');
 require_once('./Services/Form/classes/class.ilPropertyFormGUI.php');
 require_once('./Modules/Course/classes/class.ilObjCourse.php');
+require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/Assignment/class.multaAssignment.php');
+require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/Assignment/class.multaSummaryMail.php');
 
 /**
  * Class multaCourseGUI
@@ -114,11 +116,12 @@ class multaCourseGUI {
 
 
 	protected function doAssignments() {
-		foreach ($_POST['id'] as $ref_id) {
-			$role = $_POST['role'][$ref_id];
-			$ilObjCourse = new ilObjCourse($ref_id);
-			$ilObjCourse->getMemberObject()->add($this->usr_id, $role);
+		$token = multaAssignment::doAssignments($_POST, $this->usr_id);
+		if (multaConfig::get(multaConfig::F_SEND_MAILS)) {
+			$sum = multaSummaryMail::getInstance($token);
+			$sum->sendMail(new ilObjUser($this->usr_id));
 		}
+
 		ilUtil::sendSuccess($this->pl->txt('msg_success_user_assigned'), true);
 		$this->cancel();
 	}

@@ -1,6 +1,8 @@
 <?php
 require_once('./Services/Form/classes/class.ilPropertyFormGUI.php');
+require_once('./Services/Form/classes/class.ilMultiSelectInputGUI.php');
 require_once('class.multaConfig.php');
+require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/Assignment/class.multaSummaryMail.php');
 
 /**
  * Class multaConfigFormGUI
@@ -51,6 +53,20 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 		$se->setOptions($global_roles);
 		$this->addItem($se);
 
+		$cb = new ilCheckboxInputGUI($this->txt(multaConfig::F_SEND_MAILS), multaConfig::F_SEND_MAILS);
+
+		$te = new ilTextareaInputGUI($this->txt(multaConfig::F_EMAIL_TEXT_DE), multaConfig::F_EMAIL_TEXT_DE);
+		$te->setRows(15);
+		$te->setInfo(multaSummaryMail::getAvailablePlaceholdersAsString());
+		$cb->addSubItem($te);
+
+		$te = new ilTextareaInputGUI($this->txt(multaConfig::F_EMAIL_TEXT_EN), multaConfig::F_EMAIL_TEXT_EN);
+		$te->setRows(15);
+		$te->setInfo(multaSummaryMail::getAvailablePlaceholdersAsString());
+		$cb->addSubItem($te);
+
+		$this->addItem($cb);
+
 		$this->addCommandButtons();
 	}
 
@@ -65,8 +81,8 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 
 
 	/**
-	 * @param $item
-	 * @param $array
+	 * @param ilFormPropertyGUI $item
+	 * @param                   $array
 	 *
 	 * @internal param $key
 	 */
@@ -74,7 +90,6 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 		if (self::checkItem($item)) {
 			$key = $item->getPostVar();
 			$array[$key] = multaConfig::get($key);
-
 			if (self::checkForSubItem($item)) {
 				foreach ($item->getSubItems() as $subitem) {
 					$this->getValuesForItem($subitem, $array);
@@ -100,7 +115,7 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 
 
 	/**
-	 * @param $item
+	 * @param  ilFormPropertyGUI $item
 	 */
 	private function saveValueForItem($item) {
 		if (self::checkItem($item)) {

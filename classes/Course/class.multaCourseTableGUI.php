@@ -3,8 +3,6 @@
 /* Copyright (c) 1998-2009 ILIAS open source, Extended GPL, see docs/LICENSE */
 
 
-require_once('./Modules/Course/classes/class.ilCourseConstants.php');
-
 require_once('class.multaCourse.php');
 require_once('./Services/Table/classes/class.ilTable2GUI.php');
 require_once('./Services/UIComponent/AdvancedSelectionList/classes/class.ilAdvancedSelectionListGUI.php');
@@ -79,7 +77,7 @@ class multaCourseTableGUI extends ilTable2GUI {
 			}
 			if ($k == 'role') {
 				$this->tpl->setCurrentBlock('td');
-				$this->tpl->setVariable('VALUE', $this->getRoleSelector($a_set['ref_id'], ilCourseConstants::CRS_ADMIN));
+				$this->tpl->setVariable('VALUE', $this->getRoleSelector($a_set['ref_id'], multaAssignment::ROLE_ADMIN));
 				$this->tpl->parseCurrentBlock();
 				continue;
 			}
@@ -147,9 +145,9 @@ class multaCourseTableGUI extends ilTable2GUI {
 	 */
 	protected function getRoleSelector($id, $selected) {
 		$roles = array(
-			ilCourseConstants::CRS_MEMBER => $this->pl->txt('main_role_' . ilCourseConstants::CRS_MEMBER),
-			ilCourseConstants::CRS_TUTOR => $this->pl->txt('main_role_' . ilCourseConstants::CRS_TUTOR),
-			ilCourseConstants::CRS_ADMIN => $this->pl->txt('main_role_' . ilCourseConstants::CRS_ADMIN),
+			multaAssignment::ROLE_MEMBER => $this->pl->txt('main_role_' . multaAssignment::ROLE_MEMBER),
+			multaAssignment::ROLE_TUTOR => $this->pl->txt('main_role_' . multaAssignment::ROLE_TUTOR),
+			multaAssignment::ROLE_ADMIN => $this->pl->txt('main_role_' . multaAssignment::ROLE_ADMIN),
 		);
 		$selection_menu = '<select name=\'role[' . $id . ']\'>';
 		foreach ($roles as $value => $role) {
