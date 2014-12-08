@@ -1,14 +1,14 @@
 <?php
 /* Copyright (c) 1998-2012 ILIAS open source, Extended GPL, see docs/LICENSE */
 
-include_once('Services/Block/classes/class.ilBlockGUI.php');
+require_once('Services/Block/classes/class.ilBlockGUI.php');
 
 /**
- * BlockGUI class for Personal Desktop jQuery Serach Block
+ * Class multaPDBlock
  *
  * @author            Fabian Schmid <fs@studer-raimann.ch>
  * @version           $Id$
- * @ilCtrl_IsCalledBy ilPDSearchBlockGUI: ilColumnGUI
+ * @ilCtrl_IsCalledBy multaPDBlock: ilColumnGUI
  */
 class multaPDBlock extends ilBlockGUI {
 
