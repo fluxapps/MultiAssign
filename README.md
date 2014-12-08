@@ -15,7 +15,7 @@ git clone https://github.com/studer-raimann/ActiveRecord.git
 ```  
 ###Installation
 ##Install Router
-The Subscription-Plugin needs a Router-Service to work. Please install the Service first:
+The MultiAssign-Plugin needs a Router-Service to work. Please install the Service first:
  
 You start in your ILIAS root directory
 
@@ -23,7 +23,7 @@ You start in your ILIAS root directory
 cd Services  
 git clone https://github.com/studer-raimann/RouterService.git Router  
 ```
-Switch to the setup-Menu of your Installation and perform a Structure-reload in the Tab Tools. this can take a few moments. After the reload has been performed, you can install the plugin.
+Switch to the setup-Menu of your Installation and perform a Structure-reload in the Tab Tools. This can take a few moments. After the reload has been performed, you can install the plugin.
 ##Install Plugin
 Start at your ILIAS root directory  
 ```bash
@@ -51,5 +51,5 @@ www.studer-raimann.ch
 
 [pd]: /doc/Screenshots/001.png?raw=true "personal desktop"
 [user_select]: /doc/Screenshots/002.png?raw=true "Select Users"
-[assing]: /doc/Screenshots/003.png?raw=true "Assign User to multiple Courses"
+[assign]: /doc/Screenshots/003.png?raw=true "Assign User to multiple Courses"
 [conf]: /doc/Screenshots/004.png?raw=true "Plugin-Configuration"
