@@ -37,7 +37,7 @@ An additional Button on the Personal Desktop of users having a given role leads 
 ![001][pd]
 ![002][user_select]
 ![003][assign]
-Have a look at the [full documentation](/blob/master/doc/Documentation.pdf?raw=true)
+Have a look at the [full documentation](/doc/Documentation.pdf?raw=true)
 
 ##Contact
 studer + raimann ag  
