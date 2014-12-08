@@ -15,6 +15,7 @@ class multaConfig extends ActiveRecord {
 	const F_EMAIL_TEXT_DE = 'email_text_de';
 	const F_EMAIL_TEXT_EN = 'email_text_en';
 	const F_SEND_MAILS = 'send_mails';
+	const F_SHOW_PD_BUTTON = 'show_pd_button';
 
 
 	/**

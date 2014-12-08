@@ -1,4 +1,6 @@
 <?php
+
+
 require_once('./Services/Form/classes/class.ilPropertyFormGUI.php');
 require_once('./Services/Form/classes/class.ilMultiSelectInputGUI.php');
 require_once('class.multaConfig.php');
@@ -29,6 +31,7 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 		$this->parent_gui = $parent_gui;
 		$this->ctrl = $ilCtrl;
 		$this->pl = ilMultiAssignPlugin::getInstance();
+//		$this->pl->updateLanguageFiles();
 		$this->setFormAction($this->ctrl->getFormAction($this->parent_gui));
 		$this->initForm();
 	}
@@ -47,6 +50,9 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 	protected function initForm() {
 		$this->setTitle($this->pl->txt('admin_form_title'));
 
+		$te = new ilCheckboxInputGUI($this->txt(multaConfig::F_SHOW_PD_BUTTON), multaConfig::F_SHOW_PD_BUTTON);
+		$this->addItem($te);
+
 		$global_roles = self::getRoles(ilRbacReview::FILTER_ALL_GLOBAL);
 		$se = new ilMultiSelectInputGUI($this->txt(multaConfig::F_ROLES_ADMIN), multaConfig::F_ROLES_ADMIN);
 		$se->setWidth(400);
@@ -64,6 +70,7 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 		$te->setRows(15);
 		$te->setInfo(multaSummaryMail::getAvailablePlaceholdersAsString());
 		$cb->addSubItem($te);
+
 
 		$this->addItem($cb);
 
