@@ -22,6 +22,9 @@ git clone https://github.com/studer-raimann/MultiAssign.git
 ```  
 As ILIAS administrator go to "Administration->Plugins" and install/activate the plugin.  
 
+###Shot Description
+![001](/doc/Screenshots/001.png?raw=true "Overview")
+
 ###Contact
 studer + raimann ag  
 Waldeggstrasse 72  
