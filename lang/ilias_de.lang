@@ -5,13 +5,13 @@ usr_email#:#E-Mail
 usr_login#:#Account
 common_actions#:#Aktionen
 header_title#:#Multi-Zuweisung
-header_description#:#Weisen Sie einen Benutzer mehreren Workspaces zu
+header_description#:#Weisen Sie einen Benutzer mehreren Kursen zu
 button_select_user#:#Benutzer auswählen
 usr_selected_data#:#Ausgewählter Benutzer
-main_role_1#:#Manager
-main_role_2#:#Reader
-main_role_3#:#Contributor
-crs_title#:#WS-Titel
+main_role_1#:#Administrator
+main_role_2#:#Mitglied
+main_role_3#:#Tutor
+crs_title#:#Kurstitel
 crs_path#:#Pfad
 crs_role#:#Rolle
 crs_selection#:#Auswahl
@@ -29,3 +29,6 @@ admin_email_text_de#:#Deutscher E-Mailtext
 admin_email_text_en#:#Englischer E-Mailtext
 admin_placeholders#:#Platzhalter
 admin_send_mails#:#Sammel-E-Mail versenden
+admin_show_pd_button#:#Multi-Zuweisung-Button auf Persönlichem Schreibtisch
+block_title#:#Multi-Zuweisung
+block_button#:#Benutzer einschreiben
