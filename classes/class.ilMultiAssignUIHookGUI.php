@@ -4,6 +4,7 @@
 require_once('./Services/UIComponent/classes/class.ilUIHookPluginGUI.php');
 require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/Config/class.multaConfig.php');
 require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/Block/class.multaPDBlock.php');
+require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/class.multa.php');
 
 /**
  * Class ilMultiAssignUIHookGUI
@@ -28,7 +29,11 @@ class ilMultiAssignUIHookGUI extends ilUIHookPluginGUI {
 		if (multaConfig::get(multaConfig::F_SHOW_PD_BUTTON)) {
 			if ($a_comp == 'Services/PersonalDesktop' AND $a_part == 'right_column') {
 				global $ilCtrl;
-				$path = array( 'ilRouterGUI', 'multaMainGUI' );
+				if (multa::is50()) {
+					$path = array( 'ilUIPluginRouterGUI', 'multaMainGUI' );
+				} else {
+					$path = array( 'ilRouterGUI', 'multaMainGUI' );
+				}
 				if ($ilCtrl->checkTargetClass($path)) {
 					return array(
 						'mode' => ilUIHookPluginGUI::PREPEND,

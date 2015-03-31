@@ -2,6 +2,7 @@
 require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/User/class.multaUserGUI.php');
 require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/Course/class.multaCourseGUI.php');
 require_once('class.ilMultiAssignPlugin.php');
+require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/class.multa.php');
 
 /**
  * Class multaMainGUI
@@ -11,7 +12,7 @@ require_once('class.ilMultiAssignPlugin.php');
  *
  * @ilCtrl_Calls      multaMainGUI : multaUserGUI
  * @ilCtrl_Calls      multaMainGUI : multaCourseGUI
- * @ilCtrl_IsCalledBy multaMainGUI : ilRouterGUI
+ * @ilCtrl_IsCalledBy multaMainGUI : ilRouterGUI, ilUIPluginRouterGUI
  */
 class multaMainGUI {
 
@@ -28,14 +29,18 @@ class multaMainGUI {
 		$this->lng = $lng;
 		$this->tabs = $ilTabs;
 		$this->pl = ilMultiAssignPlugin::getInstance();
-//		$this->pl->updateLanguageFiles();
+		//		$this->pl->updateLanguageFiles();
 	}
 
 
 	protected function initHeader() {
 		$this->tpl->setTitle($this->pl->txt('header_title'));
 		$this->tpl->setDescription($this->pl->txt('header_description'));
-		$this->tpl->setTitleIcon(ilUtil::getImagePath('icon_usr_b.png'));
+		if (multa::is50()) {
+			$this->tpl->setTitleIcon(ilUtil::getImagePath('icon_usr.svg'));
+		} else {
+			$this->tpl->setTitleIcon(ilUtil::getImagePath('icon_usr_b.png'));
+		}
 	}
 
 
@@ -52,6 +57,10 @@ class multaMainGUI {
 				$gui = new multaCourseGUI();
 				$this->ilCtrl->forwardCommand($gui);
 				break;
+		}
+		if (multa::is50()) {
+			$this->tpl->getStandardTemplate();
+			$this->tpl->show();
 		}
 	}
 }

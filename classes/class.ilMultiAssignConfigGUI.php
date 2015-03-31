@@ -55,6 +55,7 @@ class ilMultiAssignConfigGUI extends ilPluginConfigGUI {
 		$form = new multaConfigFormGUI($this);
 		$form->setValuesByPost();
 		if ($form->saveObject()) {
+			ilUtil::sendSuccess('Saved', true);
 			$this->ctrl->redirect($this, self::CMD_DEFAULT);
 		}
 		$this->tpl->setContent($form->getHTML());

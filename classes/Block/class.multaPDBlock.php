@@ -2,7 +2,7 @@
 /* Copyright (c) 1998-2012 ILIAS open source, Extended GPL, see docs/LICENSE */
 
 require_once('Services/Block/classes/class.ilBlockGUI.php');
-
+require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/class.multa.php');
 /**
  * Class multaPDBlock
  *
@@ -54,7 +54,11 @@ class multaPDBlock extends ilBlockGUI {
 		/**
 		 * @var $ilCtrl ilCtrl
 		 */
-		$path = array( 'ilRouterGUI', 'multaMainGUI' );
+		if (multa::is50()) {
+			$path = array( 'ilUIPluginRouterGUI', 'multaMainGUI' );
+		} else {
+			$path = array( 'ilRouterGUI', 'multaMainGUI' );
+		}
 
 		$link = $ilCtrl->getLinkTargetByClass($path);
 		$button = "<a href='" . $link . "' class='submit'>" . $this->pl->txt('block_button') . '</a>';
