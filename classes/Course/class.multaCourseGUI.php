@@ -50,9 +50,6 @@ class multaCourseGUI {
 
 
 	public function executeCommand() {
-		if (!multaAccess::hasAccess()) {
-			return false;
-		}
 		$this->initUser();
 		$cmd = $this->ilCtrl->getCmd(self::CMD_INDEX);
 		switch ($cmd) {
