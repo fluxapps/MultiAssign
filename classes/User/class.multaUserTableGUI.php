@@ -177,8 +177,8 @@ class multaUserTableGUI extends ilTable2GUI {
 	}
 
 
-	function resetOffset() {
-		parent::resetOffset(false);
+    public function resetOffset($a_in_determination = false) {
+        parent::resetOffset($a_in_determination);
 		$this->ctrl->setParameter($this->parent_obj, $this->getNavParameter(), $this->nav_value);
 	}
 }

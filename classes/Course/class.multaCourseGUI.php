@@ -114,7 +114,7 @@ class multaCourseGUI {
 
 	protected function doAssignments() {
 		$token = multaAssignment::doAssignments($_POST, $this->usr_id);
-		if (multaConfig::get(multaConfig::F_SEND_MAILS)) {
+		if (multaConfig::getValueById(multaConfig::F_SEND_MAILS)) {
 			$sum = multaSummaryMail::getInstance($token);
 			$sum->sendMail(new ilObjUser($this->usr_id));
 		}
