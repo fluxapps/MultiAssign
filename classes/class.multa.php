@@ -14,6 +14,7 @@ class multa {
 	const ILIAS_44 = 44;
 	const ILIAS_50 = 50;
 	const ILIAS_51 = 51;
+    const ILIAS_52 = 52;
 	const MIN_ILIAS_VERSION = self::ILIAS_44;
 	const AR_CUST = './Customizing/global/plugins/Libraries/ActiveRecord/class.ActiveRecord.php';
 	const AR_SERV = './Services/ActiveRecord/class.ActiveRecord.php';

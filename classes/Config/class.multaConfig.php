@@ -39,7 +39,7 @@ class multaConfig extends ActiveRecord {
 	 *
 	 * @return string
 	 */
-	public static function get($id) {
+	public static function getValueById($id) {
 		/**
 		 * @var $obj multaConfig
 		 */

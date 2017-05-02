@@ -29,6 +29,6 @@ admin_email_text_de#:#German E-Mailtext
 admin_email_text_en#:#English E-Mailtext
 admin_placeholders#:#Placeholders
 admin_send_mails#:#Send Summary-Mail
-admin_show_pd_button#:#
+admin_show_pd_button#:#Multi-Assign-Button on Personal Desktop
 block_title#:#Multi-Assign
 block_button#:#Assign User
