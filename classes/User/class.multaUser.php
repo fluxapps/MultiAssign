@@ -1,6 +1,5 @@
 <?php
-require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/class.multa.php');
-multa::initAR();
+require_once('./Services/ActiveRecord/class.ActiveRecord.php');
 require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/User/class.multaObj.php');
 
 /**
@@ -1552,5 +1551,3 @@ class multaUser extends ActiveRecord {
 		$this->key = $key;
 	}
 }
-
-?>

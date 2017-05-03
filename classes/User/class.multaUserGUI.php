@@ -86,5 +86,3 @@ class multaUserGUI {
 		$this->ilCtrl->redirectByClass(array( 'multaCourseGUI' ));
 	}
 }
-
-?>

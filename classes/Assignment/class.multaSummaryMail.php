@@ -262,5 +262,3 @@ class multaSummaryMail {
 		$this->subject = $subject;
 	}
 }
-
-?>

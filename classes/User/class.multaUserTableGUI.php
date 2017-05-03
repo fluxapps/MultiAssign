@@ -182,5 +182,3 @@ class multaUserTableGUI extends ilTable2GUI {
 		$this->ctrl->setParameter($this->parent_obj, $this->getNavParameter(), $this->nav_value);
 	}
 }
-
-?>

@@ -40,5 +40,3 @@ class multaCourse {
 		return $result;
 	}
 }
-
-?>

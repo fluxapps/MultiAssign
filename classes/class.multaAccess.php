@@ -41,5 +41,3 @@ class multaAccess {
 		return $access_cache[$usr_id];
 	}
 }
-
-?>

@@ -217,4 +217,3 @@ class multaCourseTableGUI extends ilTable2GUI {
 	}
 }
 
-?>

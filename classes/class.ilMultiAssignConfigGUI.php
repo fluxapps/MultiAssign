@@ -61,5 +61,3 @@ class ilMultiAssignConfigGUI extends ilPluginConfigGUI {
 		$this->tpl->setContent($form->getHTML());
 	}
 }
-
-?>

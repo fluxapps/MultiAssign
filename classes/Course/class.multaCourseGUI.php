@@ -140,5 +140,3 @@ class multaCourseGUI {
 		$this->ilCtrl->redirectByClass('multaUserGUI');
 	}
 }
-
-?>
