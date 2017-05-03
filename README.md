@@ -4,26 +4,7 @@ ILIAS UserInterfaceHook-Plugin with the following featues:
 - Add a User so one or more courses  
 - Send a Summary-Email
 
-## Installation
-### Install ActiveRecord
-ILIAS 4.4 does not include ActiveRecord. Therefore please install the latest Version of active record before you install the plugin:
-Start at your ILIAS root directory
-```bash
-mkdir -p Customizing/global/plugins/Libraries/  
-cd Customizing/global/plugins/Libraries  
-git clone https://github.com/studer-raimann/ActiveRecord.git  
-```
-### Install Router
-The MultiAssign-Plugin needs a Router-Service to work. Please install the Service first:
- 
-You start in your ILIAS root directory
-
-```bash
-cd Services  
-git clone https://github.com/studer-raimann/RouterService.git Router  
-```
-Switch to the setup-Menu of your Installation and perform a Structure-reload in the Tab Tools. This can take a few moments. After the reload has been performed, you can install the plugin.
-### Install Plugin
+# Installation
 Start at your ILIAS root directory  
 ```bash
 mkdir -p Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/  
