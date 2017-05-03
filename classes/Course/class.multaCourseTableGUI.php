@@ -178,8 +178,8 @@ class multaCourseTableGUI extends ilTable2GUI {
 	}
 
 
-	public function resetOffset() {
-		parent::resetOffset(false);
+	public function resetOffset($a_in_determination = false) {
+		parent::resetOffset($a_in_determination);
 		$this->ctrl->setParameter($this->parent_obj, $this->getNavParameter(), $this->nav_value);
 	}
 
@@ -217,4 +217,3 @@ class multaCourseTableGUI extends ilTable2GUI {
 	}
 }
 
-?>

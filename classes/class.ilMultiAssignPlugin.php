@@ -76,4 +76,3 @@ class ilMultiAssignPlugin extends ilUserInterfaceHookPlugin {
 	}
 }
 
-?>

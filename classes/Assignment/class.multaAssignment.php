@@ -1,6 +1,5 @@
 <?php
-require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/class.multa.php');
-multa::initAR();
+require_once('./Services/ActiveRecord/class.ActiveRecord.php');
 require_once('./Modules/Course/classes/class.ilObjCourse.php');
 
 /**
@@ -280,5 +279,3 @@ class multaAssignment extends ActiveRecord {
 		parent::create();
 	}
 }
-
-?>

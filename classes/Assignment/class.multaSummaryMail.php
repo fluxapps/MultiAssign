@@ -93,7 +93,7 @@ class multaSummaryMail {
 
 
 	protected function renderEmailText() {
-		$text = multaConfig::get(multaConfig::F_EMAIL_TEXT_PREFIX . $this->getLngKey());
+		$text = multaConfig::getValueById(multaConfig::F_EMAIL_TEXT_PREFIX . $this->getLngKey());
 
 		foreach (self::$placeholders as $p) {
 			$text = preg_replace("/\\[" . $p . "\\]/uim", $this->renderPlaceholder($p), $text);
@@ -262,5 +262,3 @@ class multaSummaryMail {
 		$this->subject = $subject;
 	}
 }
-
-?>
