@@ -50,7 +50,7 @@ class multaSummaryMail {
 	/**
 	 * @var string
 	 */
-	protected $subject = 'Multi-Assign';
+	protected $subject = 'Multi-Assign'; // TODO: Translate
 	/**
 	 * @var multaSummaryMail[]
 	 */
@@ -157,7 +157,7 @@ class multaSummaryMail {
 		$this->renderEmailText();
 
 		$ilMail = new ilMail($ilUser->getId());
-		$ilMail->sendMail($ilObjUser->getLogin(), '', '', 'Multi-Assign', $this->getMailText(), NULL, array( 'normal' ));
+		$ilMail->sendMail($ilObjUser->getLogin(), '', '', 'Multi-Assign', $this->getMailText(), NULL, array( 'normal' )); // TODO: Translate
 	}
 
 

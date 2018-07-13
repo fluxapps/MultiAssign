@@ -2,6 +2,7 @@
 /* Copyright (c) 1998-2012 ILIAS open source, Extended GPL, see docs/LICENSE */
 
 require_once('Services/Block/classes/class.ilBlockGUI.php');
+
 /**
  * Class multaPDBlock
  *
@@ -14,7 +15,7 @@ class multaPDBlock extends ilBlockGUI {
 	/**
 	 * @var string
 	 */
-	protected static $block_type = 'multa';
+	protected static $block_type = ilMultiAssignPlugin::PLUGIN_ID;
 	/**
 	 * @var bool
 	 */
@@ -27,7 +28,7 @@ class multaPDBlock extends ilBlockGUI {
 	public function __construct() {
 		parent::__construct();
 		$this->pl = ilMultiAssignPlugin::getInstance();
-//		$this->pl->updateLanguageFiles();
+		//		$this->pl->updateLanguageFiles();
 		$this->setTitle($this->pl->txt('block_title'));
 	}
 
@@ -53,7 +54,7 @@ class multaPDBlock extends ilBlockGUI {
 		/**
 		 * @var $ilCtrl ilCtrl
 		 */
-		$link = $ilCtrl->getLinkTargetByClass(array( 'ilUIPluginRouterGUI', 'multaMainGUI' ));
+		$link = $ilCtrl->getLinkTargetByClass(array( ilUIPluginRouterGUI::class, multaMainGUI::class ));
 		$button = "<a href='" . $link . "' class='btn btn-default'>" . $this->pl->txt('block_button') . '</a>';
 
 		$this->setDataSection($button);

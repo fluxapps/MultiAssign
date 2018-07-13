@@ -10,6 +10,7 @@ require_once('./Modules/Course/classes/class.ilObjCourse.php');
  */
 class multaAssignment extends ActiveRecord {
 
+	const TABLE_NAME = 'multa_assignment';
 	const ROLE_ADMIN = ilCourseConstants::CRS_ADMIN;
 	const ROLE_TUTOR = ilCourseConstants::CRS_TUTOR;
 	const ROLE_MEMBER = ilCourseConstants::CRS_MEMBER;
@@ -17,19 +18,18 @@ class multaAssignment extends ActiveRecord {
 
 	/**
 	 * @return string
-	 * @description Return the Name of your Database Table
-	 * @deprecated
 	 */
-	static function returnDbTableName() {
-		return 'multa_assignment';
+	public function getConnectorContainerName() {
+		return self::TABLE_NAME;
 	}
 
 
 	/**
 	 * @return string
+	 * @deprecated
 	 */
-	public function getConnectorContainerName() {
-		return 'multa_assignment';
+	public static function returnDbTableName() {
+		return self::TABLE_NAME;
 	}
 
 

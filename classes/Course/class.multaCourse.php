@@ -23,9 +23,9 @@ class multaCourse {
 		 */
 		$result = array();
 
-		$query = "SELECT c.title, ref.ref_id FROM object_data c
+		$query = "SELECT c.title, ref.ref_id FROM " . multaObj::TABLE_NAME . " c
                     INNER JOIN object_reference ref ON ref.obj_id = c.obj_id AND isNULL(ref.deleted)
-                    INNER JOIN object_data r ON r.type = 'role' AND (r.title = CONCAT('il_crs_admin_',ref.ref_id))
+                    INNER JOIN " . multaObj::TABLE_NAME . " r ON r.type = 'role' AND (r.title = CONCAT('il_crs_admin_',ref.ref_id))
                     INNER JOIN rbac_ua ua ON ua.usr_id = " . $ilUser->getId() . " AND ua.rol_id = r.obj_id
                     WHERE c.type = 'crs'";
 		if ($sorting_field) {

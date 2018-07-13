@@ -1,6 +1,5 @@
 <?php
 
-
 require_once('./Services/Form/classes/class.ilPropertyFormGUI.php');
 require_once('./Services/Form/classes/class.ilMultiSelectInputGUI.php');
 require_once('class.multaConfig.php');
@@ -27,11 +26,12 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 	 * @param ilMultiAssignConfigGUI $parent_gui
 	 */
 	public function __construct(ilMultiAssignConfigGUI $parent_gui) {
+		parent::__construct();
 		global $ilCtrl;
 		$this->parent_gui = $parent_gui;
 		$this->ctrl = $ilCtrl;
 		$this->pl = ilMultiAssignPlugin::getInstance();
-//		$this->pl->updateLanguageFiles();
+		//		$this->pl->updateLanguageFiles();
 		$this->setFormAction($this->ctrl->getFormAction($this->parent_gui));
 		$this->initForm();
 	}
@@ -70,7 +70,6 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 		$te->setRows(15);
 		$te->setInfo(multaSummaryMail::getAvailablePlaceholdersAsString());
 		$cb->addSubItem($te);
-
 
 		$this->addItem($cb);
 
@@ -159,8 +158,8 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 
 
 	protected function addCommandButtons() {
-		$this->addCommandButton('save', $this->pl->txt('admin_form_button_save'));
-		$this->addCommandButton('cancel', $this->pl->txt('admin_form_button_cancel'));
+		$this->addCommandButton(ilMultiAssignConfigGUI::CMD_SAVE, $this->pl->txt('admin_form_button_save'));
+		$this->addCommandButton(ilMultiAssignConfigGUI::CMD_CANCEL, $this->pl->txt('admin_form_button_cancel'));
 	}
 
 

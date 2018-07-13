@@ -137,6 +137,6 @@ class multaCourseGUI {
 
 	protected function cancel() {
 		ilSession::set(multaUserGUI::SESSION_ID, NULL);
-		$this->ilCtrl->redirectByClass('multaUserGUI');
+		$this->ilCtrl->redirectByClass(multaUserGUI::class);
 	}
 }

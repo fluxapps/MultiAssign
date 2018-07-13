@@ -1,6 +1,8 @@
 <?php
 
 require_once('./Services/UIComponent/classes/class.ilUserInterfaceHookPlugin.php');
+require_once __DIR__ . "/Assignment/class.multaAssignment.php";
+require_once __DIR__ . "/Config/class.multaConfig.php";
 
 /**
  * ilMultiAssignPlugin
@@ -11,6 +13,7 @@ require_once('./Services/UIComponent/classes/class.ilUserInterfaceHookPlugin.php
  */
 class ilMultiAssignPlugin extends ilUserInterfaceHookPlugin {
 
+	const PLUGIN_ID = 'multa';
 	const PLUGIN_NAME = 'MultiAssign';
 	/**
 	 * @var ilMultiAssignPlugin
@@ -27,6 +30,24 @@ class ilMultiAssignPlugin extends ilUserInterfaceHookPlugin {
 		}
 
 		return self::$instance;
+	}
+
+
+	/**
+	 * @var ilDB
+	 */
+	protected $db;
+
+
+	/**
+	 *
+	 */
+	public function __construct() {
+		parent::__construct();
+
+		global $DIC;
+
+		$this->db = $DIC->database();
 	}
 
 
@@ -74,5 +95,15 @@ class ilMultiAssignPlugin extends ilUserInterfaceHookPlugin {
 		}
 		$this->updateLanguages();
 	}
-}
 
+
+	/**
+	 * @return bool
+	 */
+	protected function beforeUninstall() {
+		$this->db->dropTable(multaAssignment::TABLE_NAME, false);
+		$this->db->dropTable(multaConfig::TABLE_NAME, false);
+
+		return true;
+	}
+}

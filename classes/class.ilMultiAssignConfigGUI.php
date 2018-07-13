@@ -12,8 +12,10 @@ require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHoo
  */
 class ilMultiAssignConfigGUI extends ilPluginConfigGUI {
 
+	const CMD_CONFIGURE = 'configure';
 	const CMD_DEFAULT = 'index';
 	const CMD_SAVE = 'save';
+	const CMD_CANCEL = "cancel";
 	/**
 	 * @var ilCtrl
 	 */
@@ -32,12 +34,13 @@ class ilMultiAssignConfigGUI extends ilPluginConfigGUI {
 
 
 	public function performCommand($cmd) {
-		if ($cmd == 'configure') {
+		if ($cmd == self::CMD_CONFIGURE) {
 			$cmd = self::CMD_DEFAULT;
 		}
 		switch ($cmd) {
 			case self::CMD_DEFAULT:
 			case self::CMD_SAVE:
+			case self::CMD_CANCEL:
 				$this->{$cmd}();
 				break;
 		}
@@ -55,9 +58,14 @@ class ilMultiAssignConfigGUI extends ilPluginConfigGUI {
 		$form = new multaConfigFormGUI($this);
 		$form->setValuesByPost();
 		if ($form->saveObject()) {
-			ilUtil::sendSuccess('Saved', true);
+			ilUtil::sendSuccess('Saved', true); // TODO: Translate
 			$this->ctrl->redirect($this, self::CMD_DEFAULT);
 		}
 		$this->tpl->setContent($form->getHTML());
+	}
+
+
+	protected function cancel() {
+		$this->index();
 	}
 }

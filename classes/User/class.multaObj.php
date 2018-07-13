@@ -6,23 +6,28 @@ require_once('./Services/ActiveRecord/class.ActiveRecord.php');
  *
  * @author  Fabian Schmid <fs@studer-raimann.ch>
  * @version 2.0.6
+ *
+ * @deprecated
  */
 class multaObj extends ActiveRecord {
 
-	/**
-	 * @return string
-	 * @deprecated
-	 */
-	static function returnDbTableName() {
-		return 'object_data';
-	}
+	const TABLE_NAME = 'object_data';
 
 
 	/**
 	 * @return string
 	 */
 	public function getConnectorContainerName() {
-		return 'object_data';
+		return self::TABLE_NAME;
+	}
+
+
+	/**
+	 * @return string
+	 * @deprecated
+	 */
+	public static function returnDbTableName() {
+		return self::TABLE_NAME;
 	}
 
 
@@ -95,4 +100,3 @@ class multaObj extends ActiveRecord {
 	 */
 	protected $import_id;
 }
-

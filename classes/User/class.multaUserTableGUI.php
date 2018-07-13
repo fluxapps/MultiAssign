@@ -32,7 +32,7 @@ class multaUserTableGUI extends ilTable2GUI {
 	 * @param multaUserGUI $a_parent_obj
 	 * @param string       $a_parent_cmd
 	 */
-	public function  __construct(multaUserGUI $a_parent_obj, $a_parent_cmd) {
+	public function __construct(multaUserGUI $a_parent_obj, $a_parent_cmd) {
 		/**
 		 * @var $ilCtrl ilCtrl
 		 */
@@ -55,7 +55,7 @@ class multaUserTableGUI extends ilTable2GUI {
 		$this->setExternalSegmentation(true);
 		$this->setDisableFilterHiding(true);
 		$this->parseData();
-		$this->addCommandButton('selectUser', $this->pl->txt('button_select_user'));
+		$this->addCommandButton(multaUserGUI::CMD_SELECT_USER, $this->pl->txt('button_select_user'));
 	}
 
 
@@ -114,7 +114,7 @@ class multaUserTableGUI extends ilTable2GUI {
 
 		$this->setMaxCount($multaUser->count());
 		if (!$multaUser->hasSets()) {
-			//			ilUtil::sendInfo('Keine Ergebnisse für diesen Filter');
+			//			ilUtil::sendInfo('Keine Ergebnisse für diesen Filter'); // TODO: Translate
 		}
 		$multaUser->limit($this->getOffset(), $this->getOffset() + $this->getLimit());
 		$multaUser->orderBy('email');
@@ -177,8 +177,8 @@ class multaUserTableGUI extends ilTable2GUI {
 	}
 
 
-    public function resetOffset($a_in_determination = false) {
-        parent::resetOffset($a_in_determination);
+	public function resetOffset($a_in_determination = false) {
+		parent::resetOffset($a_in_determination);
 		$this->ctrl->setParameter($this->parent_obj, $this->getNavParameter(), $this->nav_value);
 	}
 }

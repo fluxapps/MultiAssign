@@ -42,7 +42,7 @@ class multaMainGUI {
 	public function executeCommand() {
 		if (!multaAccess::hasAccess()) {
 			ilUtil::sendFailure($this->pl->txt('access_denied'), true);
-			$this->ilCtrl->redirectByClass('ilPersonalDesktopGUI');
+			$this->ilCtrl->redirectByClass(ilPersonalDesktopGUI::class);
 		}
 		$this->initHeader();
 		$next_class = $this->ilCtrl->getNextClass();
@@ -61,4 +61,3 @@ class multaMainGUI {
 		$this->tpl->show();
 	}
 }
-

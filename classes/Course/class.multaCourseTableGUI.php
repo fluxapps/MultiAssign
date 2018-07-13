@@ -2,7 +2,6 @@
 
 /* Copyright (c) 1998-2009 ILIAS open source, Extended GPL, see docs/LICENSE */
 
-
 require_once('class.multaCourse.php');
 require_once('./Services/Table/classes/class.ilTable2GUI.php');
 require_once('./Services/UIComponent/AdvancedSelectionList/classes/class.ilAdvancedSelectionListGUI.php');
@@ -34,7 +33,7 @@ class multaCourseTableGUI extends ilTable2GUI {
 	 * @param multaCourseGUI $a_parent_obj
 	 * @param string         $a_parent_cmd
 	 */
-	public function  __construct(multaCourseGUI $a_parent_obj, $a_parent_cmd) {
+	public function __construct(multaCourseGUI $a_parent_obj, $a_parent_cmd) {
 		/**
 		 * @var $ilCtrl ilCtrl
 		 */
@@ -216,4 +215,3 @@ class multaCourseTableGUI extends ilTable2GUI {
 		}
 	}
 }
-

@@ -7,9 +7,11 @@ require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHoo
  *
  * @author  Fabian Schmid <fs@studer-raimann.ch>
  * @version 2.0.6
+ * @deprecated
  */
 class multaUser extends ActiveRecord {
 
+	const TABLE_NAME = 'usr_data';
 	/**
 	 * @var multaObj
 	 */
@@ -18,18 +20,18 @@ class multaUser extends ActiveRecord {
 
 	/**
 	 * @return string
-	 * @deprecated
 	 */
-	static function returnDbTableName() {
-		return 'usr_data';
+	public function getConnectorContainerName() {
+		return self::TABLE_NAME;
 	}
 
 
 	/**
 	 * @return string
+	 * @deprecated
 	 */
-	public function getConnectorContainerName() {
-		return 'usr_data';
+	public static function returnDbTableName() {
+		return self::TABLE_NAME;
 	}
 
 

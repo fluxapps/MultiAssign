@@ -83,6 +83,6 @@ class multaUserGUI {
 			$this->ilCtrl->redirect($this, self::CMD_INDEX);
 		}
 		ilSession::set(self::SESSION_ID, $usr_id);
-		$this->ilCtrl->redirectByClass(array( 'multaCourseGUI' ));
+		$this->ilCtrl->redirectByClass(array( multaCourseGUI::class ));
 	}
 }

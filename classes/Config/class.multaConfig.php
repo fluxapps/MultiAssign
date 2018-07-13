@@ -20,15 +20,17 @@ class multaConfig extends ActiveRecord {
 
 	/**
 	 * @return string
-	 * @description Return the Name of your Database Table
-	 * @deprecated
 	 */
-	static function returnDbTableName() {
+	public function getConnectorContainerName() {
 		return self::TABLE_NAME;
 	}
 
 
-	public function getConnectorContainerName() {
+	/**
+	 * @return string
+	 * @deprecated
+	 */
+	public static function returnDbTableName() {
 		return self::TABLE_NAME;
 	}
 
