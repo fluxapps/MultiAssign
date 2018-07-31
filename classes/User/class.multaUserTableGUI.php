@@ -34,7 +34,7 @@ class multaUserTableGUI extends ilTable2GUI {
 	 */
 	public function __construct(multaUserGUI $a_parent_obj, $a_parent_cmd) {
 		/**
-		 * @var $ilCtrl ilCtrl
+		 * @var ilCtrl $ilCtrl
 		 */
 		global $ilCtrl;
 		$this->ctrl = $ilCtrl;
@@ -64,7 +64,7 @@ class multaUserTableGUI extends ilTable2GUI {
 	 */
 	public function fillRow($a_set) {
 		/**
-		 * @var $multaUser multaUser
+		 * @var multaUser $multaUser
 		 */
 		$multaUser = multaUser::find($a_set['usr_id']);
 		foreach ($this->getSelectableColumns() as $k => $v) {
@@ -168,7 +168,7 @@ class multaUserTableGUI extends ilTable2GUI {
 
 
 	/**
-	 * @param $item
+	 * @param ilFormPropertyGUI $item
 	 */
 	protected function addAndReadFilterItem(ilFormPropertyGUI $item) {
 		$this->addFilterItem($item);

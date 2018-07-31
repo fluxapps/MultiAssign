@@ -19,7 +19,7 @@ class multaCourse {
 	public static function getAll($filter = array(), $sorting_field = NULL, $order = NULL) {
 		global $ilDB, $ilUser;
 		/**
-		 * @var $ilDB ilDB
+		 * @var ilDB $ilDB
 		 */
 		$result = array();
 

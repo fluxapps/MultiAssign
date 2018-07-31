@@ -36,13 +36,13 @@ class multaConfig extends ActiveRecord {
 
 
 	/**
-	 * @param $id
+	 * @param int $id
 	 *
 	 * @return string
 	 */
 	public static function getValueById($id) {
 		/**
-		 * @var $obj multaConfig
+		 * @var multaConfig $obj
 		 */
 		$obj = self::findOrGetInstance($id);
 
@@ -54,12 +54,12 @@ class multaConfig extends ActiveRecord {
 
 
 	/**
-	 * @param $id
-	 * @param $value
+	 * @param int    $id
+	 * @param string $value
 	 */
 	public static function set($id, $value) {
 		/**
-		 * @var $obj multaConfig
+		 * @var multaConfig $obj
 		 */
 		$obj = self::find($id);
 		if (is_array($value)) {

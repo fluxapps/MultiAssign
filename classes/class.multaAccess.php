@@ -25,12 +25,12 @@ class multaAccess {
 		}
 		global $ilUser, $rbacreview;
 		/**
-		 * @var $ilUser     ilObjUser
-		 * @var $rbacreview ilRbacReview
+		 * @var ilObjUser    $ilUser
+		 * @var ilRbacReview $rbacreview
 		 */
 		$usr_id = $ilUser->getId();
 		if (!isset($access_cache[$usr_id])) {
-			if(!is_array(multaConfig::getValueById(multaConfig::F_ROLES_ADMIN))) {
+			if (!is_array(multaConfig::getValueById(multaConfig::F_ROLES_ADMIN))) {
 				$access_cache[$usr_id] = false;
 			} else {
 				$assigned = $rbacreview->isAssignedToAtLeastOneGivenRole($ilUser->getId(), multaConfig::getValueById(multaConfig::F_ROLES_ADMIN));

@@ -17,7 +17,7 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 	 */
 	protected $parent_gui;
 	/**
-	 * @var  ilCtrl
+	 * @var ilCtrl
 	 */
 	protected $ctrl;
 
@@ -38,7 +38,7 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 
 
 	/**
-	 * @param $field
+	 * @param string $field
 	 *
 	 * @return string
 	 */
@@ -88,11 +88,11 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 
 	/**
 	 * @param ilFormPropertyGUI $item
-	 * @param                   $array
+	 * @param array             $array
 	 *
 	 * @internal param $key
 	 */
-	private function getValuesForItem($item, &$array) {
+	private function getValuesForItem(ilFormPropertyGUI $item, array &$array) {
 		if (self::checkItem($item)) {
 			$key = $item->getPostVar();
 			$array[$key] = multaConfig::getValueById($key);
@@ -121,9 +121,9 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 
 
 	/**
-	 * @param  ilFormPropertyGUI $item
+	 * @param ilFormPropertyGUI $item
 	 */
-	private function saveValueForItem($item) {
+	private function saveValueForItem(ilFormPropertyGUI $item) {
 		if (self::checkItem($item)) {
 			$key = $item->getPostVar();
 			multaConfig::set($key, $this->getInput($key));
@@ -138,21 +138,21 @@ class multaConfigFormGUI extends ilPropertyFormGUI {
 
 
 	/**
-	 * @param $item
+	 * @param ilFormPropertyGUI $item
 	 *
 	 * @return bool
 	 */
-	public static function checkForSubItem($item) {
+	public static function checkForSubItem(ilFormPropertyGUI $item) {
 		return !$item instanceof ilFormSectionHeaderGUI AND !$item instanceof ilMultiSelectInputGUI;
 	}
 
 
 	/**
-	 * @param $item
+	 * @param ilFormPropertyGUI $item
 	 *
 	 * @return bool
 	 */
-	public static function checkItem($item) {
+	public static function checkItem(ilFormPropertyGUI $item) {
 		return !$item instanceof ilFormSectionHeaderGUI;
 	}
 

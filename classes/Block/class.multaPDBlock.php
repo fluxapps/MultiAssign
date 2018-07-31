@@ -52,7 +52,7 @@ class multaPDBlock extends ilBlockGUI {
 	public function fillDataSection() {
 		global $ilCtrl;
 		/**
-		 * @var $ilCtrl ilCtrl
+		 * @var ilCtrl $ilCtrl
 		 */
 		$link = $ilCtrl->getLinkTargetByClass(array( ilUIPluginRouterGUI::class, multaMainGUI::class ));
 		$button = "<a href='" . $link . "' class='btn btn-default'>" . $this->pl->txt('block_button') . '</a>';

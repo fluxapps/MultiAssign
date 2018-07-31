@@ -58,7 +58,7 @@ class multaSummaryMail {
 
 
 	/**
-	 * @param $token
+	 * @param string $token
 	 *
 	 * @return multaSummaryMail
 	 */
@@ -72,7 +72,7 @@ class multaSummaryMail {
 
 
 	/**
-	 * @param $token
+	 * @param string $token
 	 */
 	protected function __construct($token) {
 		$this->setToken($token);
@@ -104,7 +104,7 @@ class multaSummaryMail {
 
 
 	/**
-	 * @param $key
+	 * @param string $key
 	 *
 	 * @return string
 	 */
@@ -214,7 +214,7 @@ class multaSummaryMail {
 	 */
 	protected function getStringListForRole($role = NULL) {
 		/**
-		 * @var $list multaAssignment[]
+		 * @var multaAssignment[] $list
 		 */
 		$string_list = array();
 		$multaAssignmentList = multaAssignment::where(array( 'request_token' => $this->getToken() ));

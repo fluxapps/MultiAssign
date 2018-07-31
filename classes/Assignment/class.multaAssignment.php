@@ -96,14 +96,14 @@ class multaAssignment extends ActiveRecord {
 
 	/**
 	 * @param array $post
-	 * @param       $usr_id
+	 * @param int   $usr_id
 	 *
 	 * @return string
 	 */
 	public static function doAssignments(array $post, $usr_id) {
 		global $ilUser;
 		/**
-		 * @var $ilUser ilObjUser
+		 * @var ilObjUser $ilUser
 		 */
 		do {
 			$token = md5(rand(0, 100) * time());
@@ -244,8 +244,8 @@ class multaAssignment extends ActiveRecord {
 
 
 	/**
-	 * @param $field_name
-	 * @param $field_value
+	 * @param string $field_name
+	 * @param string $field_value
 	 *
 	 * @return DateTime|mixed
 	 */
@@ -259,7 +259,7 @@ class multaAssignment extends ActiveRecord {
 
 
 	/**
-	 * @param $field_name
+	 * @param string $field_name
 	 *
 	 * @return mixed|string
 	 */

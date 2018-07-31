@@ -35,7 +35,7 @@ class multaCourseTableGUI extends ilTable2GUI {
 	 */
 	public function __construct(multaCourseGUI $a_parent_obj, $a_parent_cmd) {
 		/**
-		 * @var $ilCtrl ilCtrl
+		 * @var ilCtrl $ilCtrl
 		 */
 		global $ilCtrl;
 		$this->ctrl = $ilCtrl;
@@ -168,7 +168,7 @@ class multaCourseTableGUI extends ilTable2GUI {
 
 
 	/**
-	 * @param $item
+	 * @param ilFormPropertyGUI $item
 	 */
 	protected function addAndReadFilterItem(ilFormPropertyGUI $item) {
 		$this->addFilterItem($item);
@@ -184,14 +184,14 @@ class multaCourseTableGUI extends ilTable2GUI {
 
 
 	/**
-	 * @param $ref_id
+	 * @param int $ref_id
 	 *
 	 * @return string
 	 */
 	protected function getFullPath($ref_id) {
 		global $tree;
 		/**
-		 * @var $tree ilTree
+		 * @var ilTree $tree
 		 */
 		$full_path = array();
 		foreach ($tree->getPathFull($ref_id) as $path) {

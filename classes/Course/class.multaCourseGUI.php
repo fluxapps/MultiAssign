@@ -35,10 +35,10 @@ class multaCourseGUI {
 	public function __construct() {
 		global $ilCtrl, $tpl, $lng, $ilTabs;
 		/**
-		 * @var $ilCtrl    ilCtrl
-		 * @var $tpl       ilTemplate
-		 * @var $lng       ilLanguage
-		 * @var $ilTabs    ilTabsGUI
+		 * @var ilCtrl     $ilCtrl
+		 * @var ilTemplate $tpl
+		 * @var ilLanguage $lng
+		 * @var ilTabsGUI  $ilTabs
 		 */
 		$this->ilCtrl = $ilCtrl;
 		$this->tpl = $tpl;
