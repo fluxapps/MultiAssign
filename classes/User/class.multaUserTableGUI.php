@@ -114,7 +114,7 @@ class multaUserTableGUI extends ilTable2GUI {
 
 		$this->setMaxCount($multaUser->count());
 		if (!$multaUser->hasSets()) {
-			//			ilUtil::sendInfo('Keine Ergebnisse für diesen Filter'); // TODO: Translate
+			//			ilUtil::sendInfo($this->pl->txt('no_results'));
 		}
 		$multaUser->limit($this->getOffset(), $this->getOffset() + $this->getLimit());
 		$multaUser->orderBy('email');

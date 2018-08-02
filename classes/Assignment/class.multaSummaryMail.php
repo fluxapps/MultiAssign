@@ -157,7 +157,7 @@ class multaSummaryMail {
 		$this->renderEmailText();
 
 		$ilMail = new ilMail($ilUser->getId());
-		$ilMail->sendMail($ilObjUser->getLogin(), '', '', 'Multi-Assign', $this->getMailText(), NULL, array( 'normal' )); // TODO: Translate
+		$ilMail->sendMail($ilObjUser->getLogin(), '', '', $this->subject, $this->getMailText(), NULL, array( 'normal' ));
 	}
 
 
