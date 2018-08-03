@@ -143,11 +143,7 @@ class multaCourseTableGUI extends ilTable2GUI {
 	 * @return string
 	 */
 	protected function getRoleSelector($id, $selected) {
-		$roles = array(
-			multaAssignment::ROLE_MEMBER => $this->pl->txt('main_role_' . multaAssignment::ROLE_MEMBER),
-			multaAssignment::ROLE_TUTOR => $this->pl->txt('main_role_' . multaAssignment::ROLE_TUTOR),
-			multaAssignment::ROLE_ADMIN => $this->pl->txt('main_role_' . multaAssignment::ROLE_ADMIN),
-		);
+		$roles = $this->getRoleArray();
 		$selection_menu = '<select name=\'role[' . $id . ']\'>';
 		foreach ($roles as $value => $role) {
 			$sel = ($selected == $value ? 'selected' : '');
@@ -160,20 +156,64 @@ class multaCourseTableGUI extends ilTable2GUI {
 	}
 
 
+	/**
+	 * @param $lng
+	 *
+	 * @return array
+	 */
+	protected function getRoleArray($lng) {
+		//$roles = array(
+		//	multaAssignment::ROLE_MEMBER => $this->pl->txt('main_role_'
+		//		. multaAssignment::ROLE_MEMBER),
+		//	multaAssignment::ROLE_TUTOR  => $this->pl->txt('main_role_'
+		//		. multaAssignment::ROLE_TUTOR),
+		//	multaAssignment::ROLE_ADMIN  => $this->pl->txt('main_role_'
+		//		. multaAssignment::ROLE_ADMIN),
+		//);
+		//return $roles;
+		static $roles;
+		if (is_array($roles)) {
+			return $roles;
+		}
+		global $lng;
+		/**
+		 * @var $lng \ilLanguage
+		 */
+		$lng->loadLanguageModule('crs');
+		$roles = array(
+			multaAssignment::ROLE_MEMBER => $lng->txt('crs_member'),
+			multaAssignment::ROLE_TUTOR => $lng->txt('crs_tutor'),
+			multaAssignment::ROLE_ADMIN => $lng->txt('crs_admin'),
+		);
+
+		return $roles;
+	}
+
+
 	protected function initFilters() {
-		// firstname
-		//		$te = new ilTextInputGUI($this->pl->txt('usr_firstname'), 'firstname');
-		//		$this->addAndReadFilterItem($te);
+		// Title
+		$te = new ilTextInputGUI($this->pl->txt('crs_title'), 'title');
+		$this->addAndReadFilterItem($te, 'c.title');
+
+		// Semester
+		$se = new ilSelectInputGUI($this->pl->txt('crs_period'), 'period');
+		$se->setOptions(multaCourse::getAllPeriods());
+		$this->addAndReadFilterItem($se, 'hub.period');
 	}
 
 
 	/**
 	 * @param ilFormPropertyGUI $item
+	 * @param string            $field_name_mysql
 	 */
-	protected function addAndReadFilterItem(ilFormPropertyGUI $item) {
+	protected function addAndReadFilterItem(ilFormPropertyGUI $item, $field_name_mysql = NULL) {
 		$this->addFilterItem($item);
 		$item->readFromSession();
-		$this->filter[$item->getPostVar()] = $item->getValue();
+		if ($field_name_mysql) {
+			$this->filter[$field_name_mysql] = $item->getValue();
+		} else {
+			$this->filter[$item->getPostVar()] = $item->getValue();
+		}
 	}
 
 

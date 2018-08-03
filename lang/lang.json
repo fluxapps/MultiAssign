@@ -1,0 +1,279 @@
+{
+  "plugin_prefix": "ui_uihk_multa",
+  "languages": [
+    "de",
+    "en"
+  ],
+  "entries": {
+    "admin": {
+      "email_text_de": {
+        "translations": {
+          "de": "Deutscher E-Mailtext",
+          "en": "German E-Mailtext"
+        },
+        "last_used": "17.08.2017"
+      },
+      "show_pd_button": {
+        "translations": {
+          "de": "Multi-Zuweisung-Button auf Persönlichem Schreibtisch",
+          "en": "Multi-Assign-Button on Personal Desktop"
+        }
+      },
+      "email_text_en": {
+        "translations": {
+          "de": "Englischer E-Mailtext",
+          "en": "English E-Mailtext"
+        },
+        "last_used": "17.08.2017"
+      },
+      "form_button_cancel": {
+        "translations": {
+          "de": "Abbrechen",
+          "en": "Cancel"
+        },
+        "last_used": "17.08.2017"
+      },
+      "form_button_save": {
+        "translations": {
+          "de": "Speichern",
+          "en": "Save"
+        },
+        "last_used": "17.08.2017"
+      },
+      "form_title": {
+        "translations": {
+          "de": "Einstellungen",
+          "en": "Settings"
+        },
+        "last_used": "17.08.2017"
+      },
+      "placeholders": {
+        "translations": {
+          "de": "Platzhalter",
+          "en": "Placeholders"
+        },
+        "last_used": "17.08.2017"
+      },
+      "roles": {
+        "translations": {
+          "de": "Verfügbar für Rollen",
+          "en": "Available for roles"
+        },
+        "last_used": "17.08.2017"
+      },
+      "send_mails": {
+        "translations": {
+          "de": "Sammel-E-Mail versenden",
+          "en": "Send Summary-Mail"
+        },
+        "last_used": "17.08.2017"
+      },
+      "saved": {
+        "translations": {
+          "de": "Gespeichert",
+          "en": "Saved"
+        }
+      }
+    },
+    "block": {
+      "button": {
+        "translations": {
+          "de": "Benutzer einschreiben",
+          "en": "Assign User"
+        }
+      },
+      "title": {
+        "translations": {
+          "de": "Multi-Zuweisung",
+          "en": "Multi-Assign"
+        }
+      }
+    },
+    "button": {
+      "select_user": {
+        "translations": {
+          "de": "Benutzer auswählen",
+          "en": "Select User"
+        },
+        "last_used": "17.08.2017"
+      }
+    },
+    "common": {
+      "actions": {
+        "translations": {
+          "de": "Aktionen",
+          "en": "Actions"
+        },
+        "last_used": "17.08.2017"
+      }
+    },
+    "crs": {
+      "cancel": {
+        "translations": {
+          "de": "Abbrechen",
+          "en": "Cancel"
+        },
+        "last_used": "17.08.2017"
+      },
+      "do_assignments": {
+        "translations": {
+          "de": "Benutzer einschreiben",
+          "en": "Assign User"
+        },
+        "last_used": "17.08.2017"
+      },
+      "path": {
+        "translations": {
+          "de": "Pfad",
+          "en": "Path"
+        },
+        "last_used": "17.08.2017"
+      },
+      "role": {
+        "translations": {
+          "de": "Rolle",
+          "en": "Role"
+        },
+        "last_used": "17.08.2017"
+      },
+      "selection": {
+        "translations": {
+          "de": "Auswahl",
+          "en": "Selection"
+        },
+        "last_used": "17.08.2017"
+      },
+      "title": {
+        "translations": {
+          "de": "Workspace-Title",
+          "en": "Workspace-Title"
+        },
+        "last_used": "17.08.2017"
+      },
+      "period": {
+        "translations": {
+          "de": "Semester",
+          "en": "Semester"
+        },
+        "last_used": "17.08.2017"
+      },
+      "period_null": {
+        "translations": {
+          "de": "Bitte wählen...",
+          "en": "Please select..."
+        },
+        "last_used": "17.08.2017"
+      }
+    },
+    "header": {
+      "description": {
+        "translations": {
+          "de": "Weisen Sie einen Benutzer mehreren Workspaces zu",
+          "en": "Assign a user to multiple Workspaces"
+        },
+        "last_used": "17.08.2017"
+      },
+      "title": {
+        "translations": {
+          "de": "Multi-Zuweisung",
+          "en": "Multi-Assign"
+        },
+        "last_used": "17.08.2017"
+      }
+    },
+    "main": {
+      "role_1": {
+        "translations": {
+          "de": "Manager",
+          "en": "Manager"
+        },
+        "last_used": "17.08.2017"
+      },
+      "role_2": {
+        "translations": {
+          "de": "Reader",
+          "en": "Reader"
+        },
+        "last_used": "17.08.2017"
+      },
+      "role_3": {
+        "translations": {
+          "de": "Contributor",
+          "en": "Contributor"
+        },
+        "last_used": "17.08.2017"
+      }
+    },
+    "msg": {
+      "failure_more_characters_needed": {
+        "translations": {
+          "de": "Filter müssen mind. 3 Zeichen enthalten",
+          "en": "Filters need 3 characters or more"
+        }
+      },
+      "failure_no_user_selected": {
+        "translations": {
+          "de": "Kein Benutzer ausgewählt",
+          "en": "No User selected"
+        }
+      },
+      "failure_own_usr_id": {
+        "translations": {
+          "de": "Das eigene Benutzerkonto kann nicht ausgewählt werden",
+          "en": "You can't select your own Account"
+        }
+      },
+      "success_user_assigned": {
+        "translations": {
+          "de": "Benutzer eingeschrieben",
+          "en": "User assigned"
+        }
+      }
+    },
+    "usr": {
+      "email": {
+        "translations": {
+          "de": "E-Mail",
+          "en": "E-Mail"
+        },
+        "last_used": "17.08.2017"
+      },
+      "firstname": {
+        "translations": {
+          "de": "Vorname",
+          "en": "Firstname"
+        },
+        "last_used": "17.08.2017"
+      },
+      "lastname": {
+        "translations": {
+          "de": "Nachname",
+          "en": "Lastname"
+        },
+        "last_used": "17.08.2017"
+      },
+      "login": {
+        "translations": {
+          "de": "Account",
+          "en": "Account"
+        },
+        "last_used": "17.08.2017"
+      },
+      "selected_data": {
+        "translations": {
+          "de": "Ausgewählter Benutzer",
+          "en": "Selected User"
+        },
+        "last_used": "17.08.2017"
+      }
+    },
+    "no": {
+      "results": {
+        "translations": {
+          "de": "Keine Ergebnisse für diesen Filter",
+          "en": "MISSING no_results"
+        }
+      }
+    }
+  }
+}

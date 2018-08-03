@@ -23,6 +23,26 @@ class multaCourseGUI {
 	const IDENTIFIER = 'usr_id';
 	const CMD_DO_ASSIGNMENTS = 'doAssignments';
 	/**
+	 * @var ilTemplate
+	 */
+	protected $tpl;
+	/**
+	 * @var ilCtrl
+	 */
+	protected $ilCtrl;
+	/**
+	 * @var ilLanguage
+	 */
+	protected $lng;
+	/**
+	 * @var ilTabsGUI
+	 */
+	protected $tabs;
+	/**
+	 * @var int
+	 */
+	protected $usr_id;
+	/**
 	 * @var multaUser
 	 */
 	protected $multaUser;
@@ -97,18 +117,18 @@ class multaCourseGUI {
 
 
 	public function applyFilter() {
-		//		$multaUserTableGUI = new multaUserTableGUI($this, 'index');
-		//		$multaUserTableGUI->resetOffset();
-		//		$multaUserTableGUI->writeFilterToSession();
-		//		$this->ilCtrl->redirect($this, self::CMD_INDEX);
+		$multaUserTableGUI = new multaCourseTableGUI($this, self::CMD_INDEX);
+		$multaUserTableGUI->resetOffset();
+		$multaUserTableGUI->writeFilterToSession();
+		$this->ilCtrl->redirect($this, self::CMD_INDEX);
 	}
 
 
 	public function resetFilter() {
-		//		$multaUserTableGUI = new multaUserTableGUI($this, 'index');
-		//		$multaUserTableGUI->resetFilter();
-		//		$multaUserTableGUI->resetOffset();
-		//		$this->ilCtrl->redirect($this, self::CMD_INDEX);
+		$multaUserTableGUI = new multaCourseTableGUI($this, self::CMD_INDEX);
+		$multaUserTableGUI->resetFilter();
+		$multaUserTableGUI->resetOffset();
+		$this->ilCtrl->redirect($this, self::CMD_INDEX);
 	}
 
 

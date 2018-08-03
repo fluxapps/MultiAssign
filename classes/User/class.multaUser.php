@@ -12,6 +12,7 @@ require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHoo
 class multaUser extends ActiveRecord {
 
 	const TABLE_NAME = 'usr_data';
+	protected $key;
 	/**
 	 * @var multaObj
 	 */
@@ -52,6 +53,11 @@ class multaUser extends ActiveRecord {
 
 	public function afterObjectLoad() {
 		$this->setMultaObj(multaObj::find($this->getUsrId()));
+		/**
+		 * @var $multaObj multaObj
+		 */
+		$multaObj = multaObj::find($this->getUsrId());
+		$this->setMultaObj($multaObj);
 	}
 
 

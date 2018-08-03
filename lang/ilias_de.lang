@@ -32,5 +32,7 @@ admin_send_mails#:#Sammel-E-Mail versenden
 admin_show_pd_button#:#Multi-Zuweisung-Button auf Persönlichem Schreibtisch
 block_title#:#Multi-Zuweisung
 block_button#:#Benutzer einschreiben
-saved#:#Gespeichert
+crs_period#:#Semester
+crs_period_null#:#Bitte wählen...
+admin_saved#:#Gespeichert
 no_results#:#Keine Ergebnisse für diesen Filter

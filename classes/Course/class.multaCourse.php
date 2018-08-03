@@ -10,24 +10,37 @@ require_once('./Modules/Course/classes/class.ilCourseConstants.php');
 class multaCourse {
 
 	/**
-	 * @param array $filter
+	 * @param array $filters
 	 * @param null  $sorting_field
 	 * @param null  $order
 	 *
 	 * @return array
 	 */
-	public static function getAll($filter = array(), $sorting_field = NULL, $order = NULL) {
+	public static function getAll($filters = array(), $sorting_field = NULL, $order = NULL) {
 		global $ilDB, $ilUser;
 		/**
 		 * @var ilDB $ilDB
 		 */
 		$result = array();
 
-		$query = "SELECT c.title, ref.ref_id FROM " . multaObj::TABLE_NAME . " c
+		$user_id = $ilUser->getId();
+		$query = "SELECT c.title, ref.ref_id, sync.ext_id, hub.period FROM " . multaObj::TABLE_NAME . " c
                     INNER JOIN object_reference ref ON ref.obj_id = c.obj_id AND isNULL(ref.deleted)
                     INNER JOIN " . multaObj::TABLE_NAME . " r ON r.type = 'role' AND (r.title = CONCAT('il_crs_admin_',ref.ref_id))
-                    INNER JOIN rbac_ua ua ON ua.usr_id = " . $ilUser->getId() . " AND ua.rol_id = r.obj_id
+                    INNER JOIN rbac_ua ua ON ua.usr_id = {$user_id} AND ua.rol_id = r.obj_id
+                    LEFT JOIN sr_hub_sync_history AS sync ON sync.ilias_id = ref.ref_id AND sync.sr_hub_origin_id = 1
+                    LEFT JOIN sr_hub_course AS hub ON hub.ext_id = sync.ext_id
+
                     WHERE c.type = 'crs'";
+
+		if (count($filters)) {
+			foreach ($filters as $key => $value) {
+				if ($value) {
+					$query .= " AND {$key} LIKE '%{$value}%'";
+				}
+			}
+		}
+
 		if ($sorting_field) {
 			$query .= ' ORDER BY ' . $sorting_field . ' ' . ($order ? $order : 'ASC');
 		}
@@ -38,5 +51,18 @@ class multaCourse {
 		}
 
 		return $result;
+	}
+
+
+	/**
+	 * @return array
+	 */
+	public static function getAllPeriods() {
+		$select = array( NULL => ilMultiAssignPlugin::getInstance()->txt('crs_period_null') );
+		foreach (ubPeriodList::getInstance()->getPeriods() as $period) {
+			$select[$period->getId()] = $period->getYear() . " " . $period->getSemesterString();
+		}
+
+		return $select;
 	}
 }
