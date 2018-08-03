@@ -50,7 +50,7 @@ class multaSummaryMail {
 	/**
 	 * @var string
 	 */
-	protected $subject = 'Multi-Assign'; // TODO: Translate
+	protected $subject = '';
 	/**
 	 * @var multaSummaryMail[]
 	 */
@@ -72,10 +72,18 @@ class multaSummaryMail {
 
 
 	/**
+	 * @var ilMultiAssignPlugin
+	 */
+	protected $pl;
+
+
+	/**
 	 * @param string $token
 	 */
 	protected function __construct($token) {
+		$this->pl = ilMultiAssignPlugin::getInstance();
 		$this->setToken($token);
+		$this->subject = $this->pl->txt('header_title');
 	}
 
 
