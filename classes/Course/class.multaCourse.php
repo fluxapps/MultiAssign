@@ -1,5 +1,9 @@
 <?php
+
+//use SRAG\Plugins\Hub2\Origin\ubPeriodList; // TODO: Hub2
+
 require_once('./Modules/Course/classes/class.ilCourseConstants.php');
+require_once('./Customizing/global/origins/hubCourse/unibasSLCM/class.ubPeriods.php');
 
 /**
  * Class multaCourse
