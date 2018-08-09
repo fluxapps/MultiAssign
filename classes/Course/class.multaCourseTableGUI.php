@@ -157,11 +157,9 @@ class multaCourseTableGUI extends ilTable2GUI {
 
 
 	/**
-	 * @param $lng
-	 *
 	 * @return array
 	 */
-	protected function getRoleArray($lng) {
+	protected function getRoleArray() {
 		//$roles = array(
 		//	multaAssignment::ROLE_MEMBER => $this->pl->txt('main_role_'
 		//		. multaAssignment::ROLE_MEMBER),
@@ -175,15 +173,11 @@ class multaCourseTableGUI extends ilTable2GUI {
 		if (is_array($roles)) {
 			return $roles;
 		}
-		global $lng;
-		/**
-		 * @var $lng \ilLanguage
-		 */
-		$lng->loadLanguageModule('crs');
+		$this->lng->loadLanguageModule('crs');
 		$roles = array(
-			multaAssignment::ROLE_MEMBER => $lng->txt('crs_member'),
-			multaAssignment::ROLE_TUTOR => $lng->txt('crs_tutor'),
-			multaAssignment::ROLE_ADMIN => $lng->txt('crs_admin'),
+			multaAssignment::ROLE_MEMBER => $this->lng->txt('crs_member'),
+			multaAssignment::ROLE_TUTOR => $this->lng->txt('crs_tutor'),
+			multaAssignment::ROLE_ADMIN => $this->lng->txt('crs_admin'),
 		);
 
 		return $roles;
