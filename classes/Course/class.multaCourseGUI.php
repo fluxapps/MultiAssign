@@ -133,7 +133,15 @@ class multaCourseGUI {
 
 
 	protected function doAssignments() {
-		$token = multaAssignment::doAssignments($_POST, $this->usr_id);
+		$id = filter_input(INPUT_POST, "id", FILTER_DEFAULT, FILTER_FORCE_ARRAY);
+		if (empty($id)) {
+			ilUtil::sendFailure($this->pl->txt('msg_failure_no_course_selected'), true);
+			$this->index();
+
+			return;
+		}
+
+		$token = multaAssignment::doAssignments($id, $this->usr_id);
 		if (multaConfig::getValueById(multaConfig::F_SEND_MAILS)) {
 			$sum = multaSummaryMail::getInstance($token);
 			$sum->sendMail(new ilObjUser($this->usr_id));

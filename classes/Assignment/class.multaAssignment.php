@@ -95,12 +95,12 @@ class multaAssignment extends ActiveRecord {
 
 
 	/**
-	 * @param array $post
+	 * @param array $id
 	 * @param int   $usr_id
 	 *
 	 * @return string
 	 */
-	public static function doAssignments(array $post, $usr_id) {
+	public static function doAssignments(array $id, $usr_id) {
 		global $ilUser;
 		/**
 		 * @var ilObjUser $ilUser
@@ -109,7 +109,7 @@ class multaAssignment extends ActiveRecord {
 			$token = md5(rand(0, 100) * time());
 		} while (self::where(array( 'request_token' => $token ))->hasSets());
 
-		foreach ($post['id'] as $ref_id) {
+		foreach ($id as $ref_id) {
 			$role = $_POST['role'][$ref_id];
 			$obj = new self();
 			$obj->setRequestToken($token);

@@ -18,7 +18,7 @@ crs_selection#:#Selection
 crs_do_assignments#:#Assign User
 crs_cancel#:#Cancel
 msg_success_user_assigned#:#User assigned
-msg_failure_no_user_selected#:#No User selected
+msg_failure_no_user_selected#:#No user selected!
 msg_failure_own_usr_id#:#You can't select your own Account
 msg_failure_more_characters_needed#:#Filters need 3 characters or more
 admin_form_title#:#Settings
@@ -36,3 +36,4 @@ crs_period#:#Semester
 crs_period_null#:#Please select...
 admin_saved#:#Saved
 no_results#:#MISSING no_results
+msg_failure_no_course_selected#:#No course selected!

@@ -213,8 +213,8 @@
       },
       "failure_no_user_selected": {
         "translations": {
-          "de": "Kein Benutzer ausgewählt",
-          "en": "No User selected"
+          "de": "Kein Benutzer ausgewählt!",
+          "en": "No user selected!"
         }
       },
       "failure_own_usr_id": {
@@ -227,6 +227,12 @@
         "translations": {
           "de": "Benutzer eingeschrieben",
           "en": "User assigned"
+        }
+      },
+      "failure_no_course_selected": {
+        "translations": {
+          "de": "Kein Kurs ausgewählt!",
+          "en": "No course selected!"
         }
       }
     },
