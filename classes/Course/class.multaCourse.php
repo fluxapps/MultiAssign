@@ -67,6 +67,16 @@ class multaCourse {
                     INNER JOIN object_data r ON r.type = 'role' AND (r.title = CONCAT('il_crs_admin_',ref.ref_id))
                     INNER JOIN rbac_ua ua ON ua.usr_id = " . $ilUser->getId() . " AND ua.rol_id = r.obj_id
                     WHERE c.type = 'crs'";
+
+
+				if (count($filters)) {
+					foreach ($filters as $key => $value) {
+						if ($value) {
+							$query .= " AND {$key} LIKE '%{$value}%'";
+						}
+					}
+				}
+
 				if ($sorting_field) {
 					$query .= ' ORDER BY ' . $sorting_field . ' ' . ($order ? $order : 'ASC');
 				}

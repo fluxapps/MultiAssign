@@ -51,6 +51,7 @@ class multaCourseTableGUI extends ilTable2GUI {
 		$this->setFormAction($this->ctrl->getFormAction($a_parent_obj));
 		$this->addColumns();
 		$this->initFilters();
+		$this->disable_filter_hiding = TRUE;
 		$this->setDefaultOrderField('title');
 		$this->setExternalSorting(true);
 		$this->setExternalSegmentation(true);
