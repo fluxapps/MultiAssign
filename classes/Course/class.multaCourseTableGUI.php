@@ -190,9 +190,12 @@ class multaCourseTableGUI extends ilTable2GUI {
 		$this->addAndReadFilterItem($te, 'c.title');
 
 		// Semester
-		$se = new ilSelectInputGUI($this->pl->txt('crs_period'), 'period');
-		$se->setOptions(multaCourse::getAllPeriods());
-		$this->addAndReadFilterItem($se, 'hub.period');
+		if(count(multaCourse::getAllPeriods()) > 0) {
+			$se = new ilSelectInputGUI($this->pl->txt('crs_period'), 'period');
+			$se->setOptions(multaCourse::getAllPeriods());
+			$this->addAndReadFilterItem($se, 'hub.period');
+		}
+
 	}
 
 
