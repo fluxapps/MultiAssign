@@ -36,7 +36,7 @@ class multaPDBlock extends ilBlockGUI {
 	/**
 	 * @return string
 	 */
-	static function getBlockType() {
+	public function getBlockType():string {
 		return self::$block_type;
 	}
 
@@ -44,7 +44,7 @@ class multaPDBlock extends ilBlockGUI {
 	/**
 	 * @return bool
 	 */
-	public static function isRepositoryObject() {
+	public function isRepositoryObject():bool {
 		return false;
 	}
 
