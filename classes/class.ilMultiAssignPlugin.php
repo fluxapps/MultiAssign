@@ -1,8 +1,13 @@
 <?php
 
+require_once __DIR__ . "/../vendor/autoload.php";
 require_once('./Services/UIComponent/classes/class.ilUserInterfaceHookPlugin.php');
 require_once __DIR__ . "/Assignment/class.multaAssignment.php";
 require_once __DIR__ . "/Config/class.multaConfig.php";
+
+use ILIAS\GlobalScreen\Scope\MainMenu\Provider\AbstractStaticPluginMainMenuProvider;
+use srag\DIC\MultiAssign\DICTrait;
+use srag\Plugins\MultiAssign\Menu\Menu;
 
 /**
  * ilMultiAssignPlugin
@@ -12,7 +17,7 @@ require_once __DIR__ . "/Config/class.multaConfig.php";
  *
  */
 class ilMultiAssignPlugin extends ilUserInterfaceHookPlugin {
-
+    use DICTrait;
 	const PLUGIN_ID = 'multa';
 	const PLUGIN_NAME = 'MultiAssign';
 	/**
@@ -74,4 +79,11 @@ class ilMultiAssignPlugin extends ilUserInterfaceHookPlugin {
 
 		return true;
 	}
+
+    /**
+     * @inheritDoc
+     */
+    public function promoteGlobalScreenProvider() : AbstractStaticPluginMainMenuProvider {
+        return new Menu(self::dic()->dic(), $this);
+    }
 }
