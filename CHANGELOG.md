@@ -1,6 +1,6 @@
 # Changelog
 
-## [x]
+## [2.1.0]
 * Core main menu
 
 ## [2.0.0]
