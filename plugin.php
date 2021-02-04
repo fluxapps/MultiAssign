@@ -1,6 +1,6 @@
 <?php
 $id = 'multa';
-$version = '2.0.0';
+$version = '2.1.0';
 $ilias_min_version = '5.4.0';
 $ilias_max_version = '5.4.999';
 $responsible = 'Fabian Schmid';
