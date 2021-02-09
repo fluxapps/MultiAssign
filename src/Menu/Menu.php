@@ -2,6 +2,8 @@
 
 namespace srag\Plugins\MultiAssign\Menu;
 
+use ILIAS\GlobalScreen\Scope\MainMenu\Factory\AbstractBaseItem;
+use ILIAS\UI\Component\Symbol\Icon\Standard;
 use ilMultiAssignPlugin;
 use ILIAS\GlobalScreen\Scope\MainMenu\Provider\AbstractStaticPluginMainMenuProvider;
 use ilUIPluginRouterGUI;
@@ -30,14 +32,14 @@ class Menu extends AbstractStaticPluginMainMenuProvider
     public function getStaticTopItems() : array
     {
         return [
-            $this->mainmenu->topParentItem($this->if->identifier(ilMultiAssignPlugin::PLUGIN_ID . "_top"))
+            $this->symbol($this->mainmenu->topParentItem($this->if->identifier(ilMultiAssignPlugin::PLUGIN_ID . "_top"))
                 ->withTitle(ilMultiAssignPlugin::PLUGIN_NAME)
                 ->withAvailableCallable(function () : bool {
                     return self::plugin()->getPluginObject()->isActive();
                 })
                 ->withVisibilityCallable(function () : bool {
                     return multaAccess::hasAccess();
-                })
+                }))
         ];
     }
 
@@ -50,7 +52,7 @@ class Menu extends AbstractStaticPluginMainMenuProvider
         $parent = $this->getStaticTopItems()[0];
 
         return [
-            $this->mainmenu->link($this->if->identifier(ilMultiAssignPlugin::PLUGIN_ID . "_main"))
+            $this->symbol($this->mainmenu->link($this->if->identifier(ilMultiAssignPlugin::PLUGIN_ID . "_main"))
                 ->withParent($parent->getProviderIdentification())
                 ->withTitle(self::plugin()->translate("header_title"))
                 ->withAction(self::dic()->ctrl()->getLinkTargetByClass([
@@ -62,7 +64,22 @@ class Menu extends AbstractStaticPluginMainMenuProvider
                 })
                 ->withVisibilityCallable(function () : bool {
                     return multaAccess::hasAccess();
-                })
+                }))
         ];
+    }
+
+
+    /**
+     * @param AbstractBaseItem $entry
+     *
+     * @return AbstractBaseItem
+     */
+    protected function symbol(AbstractBaseItem $entry) : AbstractBaseItem
+    {
+        if (self::version()->is6()) {
+            $entry = $entry->withSymbol(self::dic()->ui()->factory()->symbol()->icon()->standard(Standard::USR, ilMultiAssignPlugin::PLUGIN_NAME)->withIsOutlined(true));
+        }
+
+        return $entry;
     }
 }

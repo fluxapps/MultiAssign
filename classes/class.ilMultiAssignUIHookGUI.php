@@ -27,7 +27,7 @@ class ilMultiAssignUIHookGUI extends ilUIHookPluginGUI {
 	 */
 	public function getHTML($a_comp, $a_part, $a_par = array()) {
 		if (multaConfig::getValueById(multaConfig::F_SHOW_PD_BUTTON) && multaAccess::hasAccess()) {
-			if ($a_comp == 'Services/PersonalDesktop' AND $a_part == 'right_column') {
+			if (($a_comp == 'Services/PersonalDesktop' || $a_comp == 'Services/Dashboard') AND $a_part == 'right_column') {
 				global $ilCtrl;
 				if ($ilCtrl->checkTargetClass(array( 'ilUIPluginRouterGUI', 'multaMainGUI' ))) {
 					return array(

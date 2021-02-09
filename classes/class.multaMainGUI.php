@@ -2,7 +2,7 @@
 require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/User/class.multaUserGUI.php');
 require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/MultiAssign/classes/Course/class.multaCourseGUI.php');
 require_once('class.ilMultiAssignPlugin.php');
-
+use srag\DIC\MultiAssign\DICTrait;
 /**
  * Class multaMainGUI
  *
@@ -14,7 +14,7 @@ require_once('class.ilMultiAssignPlugin.php');
  * @ilCtrl_IsCalledBy multaMainGUI : ilRouterGUI, ilUIPluginRouterGUI
  */
 class multaMainGUI {
-
+	use DICTrait;
 	public function __construct() {
 		global $ilCtrl, $tpl, $lng, $ilTabs;
 		/**
@@ -42,7 +42,11 @@ class multaMainGUI {
 	public function executeCommand() {
 		if (!multaAccess::hasAccess()) {
 			ilUtil::sendFailure($this->pl->txt('access_denied'), true);
+			if (self::version()->is6()) {
+                $this->ilCtrl->redirectByClass(ilDashboardGUI::class);
+            } else {
 			$this->ilCtrl->redirectByClass(ilPersonalDesktopGUI::class);
+			}
 		}
 		$this->initHeader();
 		$next_class = $this->ilCtrl->getNextClass();
@@ -57,7 +61,12 @@ class multaMainGUI {
 				$this->ilCtrl->forwardCommand($gui);
 				break;
 		}
+		if (self::version()->is6()) {
+		    $this->tpl->loadStandardTemplate();
+		    $this->tpl->printToStdout();
+        } else {
 		$this->tpl->getStandardTemplate();
 		$this->tpl->show();
+		}
 	}
 }
