@@ -25,3 +25,12 @@ Have a look at the [full documentation](/doc/Documentation.pdf?raw=true)
 [user_select]: /doc/Screenshots/002.png?raw=true "Select Users"
 [assign]: /doc/Screenshots/003.png?raw=true "Assign User to multiple Courses"
 [conf]: /doc/Screenshots/004.png?raw=true "Plugin-Configuration"
+
+## Rebuild & Maintenance
+
+fluxlabs ag, support@fluxlabs.ch
+
+This project needs to be rebuilt before it can be maintained.
+
+Are you interested in a rebuild and would you like to participate?
+Take advantage of the crowdfunding opportunity under [discussions](https://github.com/fluxapps/MultiAssign/discussions/5).
