@@ -29,10 +29,10 @@ Have a look at the [full documentation](/doc/Documentation.pdf?raw=true)
 ## Rebuild & Maintenance
 
 fluxlabs ag, support@fluxlabs.ch
-
 This project needs to be rebuilt before it can be maintained.
 
 Are you interested in a rebuild and would you like to participate?
 Take advantage of the crowdfunding opportunity under [discussions](https://github.com/fluxapps/MultiAssign/discussions/5).
 
-Have a look at our [factsheet](https://github.com/fluxapps/docs/blob/8ce4309b0ac64c039d29204c2d5b06723084c64b/assets/Factsheet_Maintenance_Plugins.png) on the maintenance of our other key projects.
+The further plugins which need a rebuild and their pricing are listet here: [REBUILDS] (https://github.com/fluxapps/docs/blob/8ce4309b0ac64c039d29204c2d5b06723084c64b/assets/REBUILDS.png)
+Please also have a look at our [factsheet](https://github.com/fluxapps/docs/blob/8ce4309b0ac64c039d29204c2d5b06723084c64b/assets/Factsheet_Maintenance_Plugins.png) on the maintenance of our other key projects.
