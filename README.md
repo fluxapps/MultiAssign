@@ -35,4 +35,5 @@ Are you interested in a rebuild and would you like to participate?
 Take advantage of the crowdfunding opportunity under [discussions](https://github.com/fluxapps/MultiAssign/discussions/5).
 
 The plugins which need a rebuild and their pricing are listed here: [REBUILDS](https://github.com/fluxapps/docs/blob/8ce4309b0ac64c039d29204c2d5b06723084c64b/assets/REBUILDS.png)
+
 Please also have a look at our other key projects and their [MAINTENANCE](https://github.com/fluxapps/docs/blob/8ce4309b0ac64c039d29204c2d5b06723084c64b/assets/MAINTENANCE.png)
