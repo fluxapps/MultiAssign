@@ -29,6 +29,7 @@ Have a look at the [full documentation](/doc/Documentation.pdf?raw=true)
 ## Rebuild & Maintenance
 
 fluxlabs ag, support@fluxlabs.ch
+
 This project needs to be rebuilt before it can be maintained.
 
 Are you interested in a rebuild and would you like to participate?
